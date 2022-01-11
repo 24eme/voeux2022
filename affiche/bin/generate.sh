@@ -1,0 +1,24 @@
+#!/bin/bash
+
+template=$1 #in template/ 
+aaa=$2
+bbb=$3
+ccc=$4
+fond=$5
+tenue=$6
+qrcode=$7
+output=$8 #in output/
+
+echo "s|fond/template_fond.png|"$fond"|" > $output".sed"
+echo "s|qrcode/template_qrcode.png|"$qrcode"|" >> $output".sed"
+echo "s|tenue/template_tenue.png|"$tenue"|" >> $output".sed"
+echo "s|AAATEMPLATEAAA|"$aaa"|" >> $output".sed"
+echo "s|BBBTEMPLATEBBB|"$bbb"|" >> $output".sed"
+echo "s|CCCTEMPLATECCC|"$ccc"|" >> $output".sed"
+
+cat $template | sed -f $output".sed" > $output".svg"
+
+inkscape $output".svg" --export-area-page --batch-process --export-type=pdf --export-filename=$output
+inkscape $output".svg" --export-area-page --batch-process --export-type=png --export-filename=$output".png"
+
+rm $output".sed" $output".svg"
