@@ -1,3 +1,18 @@
+<?php 
+
+$args = [
+    'qrcode' => FILTER_SANITIZE_STRING
+];
+
+$GET = filter_input_array(INPUT_GET, $args);
+$qrcode = $GET['qrcode']; 
+
+if(!$qrcode) {
+    echo "Aucun qrcode n'a été renseigné";
+    exit(1);
+}
+
+?>
 <!doctype html>
 <html lang="fr_FR">
     <head>
@@ -12,6 +27,9 @@
         </div>
         <button id="take" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 0;">Prendre la photo</button>
         <div id="errorMsg"></div>
+        <form id="form_camera" action="photo.php?qrcode=<?php echo $qrcode ?>" method="POST" enctype="multipart/form-data">
+            <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px;" type="file" />
+        </form>
         <script src="app.js"></script>
     </body>    
 </html>
