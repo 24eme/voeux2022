@@ -1,19 +1,17 @@
 'use strict';
 
 // Put variables in global scope to make them available to the browser console.
-var video = document.querySelector('video');
+var video = document.querySelector('#camera');
 var photo = document.querySelector('#photo');
-var photo_resultat = document.querySelector('#photo_resultat');
-var canvas = new fabric.Canvas('portrait');
 var constraints = window.constraints = {
   audio: false,
   video: true
 };
-var startbutton  = document.querySelector('#startbutton')
+var startbutton  = document.querySelector('#take')
 var errorElement = document.querySelector('#errorMsg');
 var streaming = false
-var width = 600
-var height = 0
+var width = 1700;
+var height = 0;
 var fabricImage = null;
 
 navigator.mediaDevices.getUserMedia(constraints)
@@ -45,6 +43,10 @@ navigator.mediaDevices.getUserMedia(constraints)
 video.addEventListener('canplay', function(ev){
   if (!streaming) {
     height = video.videoHeight / (video.videoWidth/width);
+    var ratio = video.videoHeight / video.videoWidth;
+    console.log(ratio);
+    video.style.height = video.clientWidth * ratio+"px";
+    console.log(video.style.height);
     video.setAttribute('width', width);
     video.setAttribute('height', height);
     streaming = true;
@@ -54,52 +56,22 @@ video.addEventListener('canplay', function(ev){
 function errorMsg(msg, error) {
   errorElement.innerHTML += '<p>' + msg + '</p>';
   if (typeof error !== 'undefined') {
-    console.error(error);
+    console.log(error);
   }
 }
 
 function takepicture() {
   var canvasBuffer = document.createElement('canvas');
-  canvasBuffer.width = width;
-  canvasBuffer.height = height;
+  canvasBuffer.width = video.width;
+  canvasBuffer.height = video.height;
+  console.log(video.width);
   canvasBuffer.getContext('2d').drawImage(video, 0, 0, width, height);
-  photo.width = width;
-  photo.height = height;
   photo.setAttribute('src', canvasBuffer.toDataURL('image/png'));
-  var canvasHTML = document.querySelector('#portrait');
-  canvasHTML.width = width;
-  canvasHTML.height = height;
-  canvas.setHeight(350);
-  canvas.setWidth(250);
-  video.style.opacity = 0.5;
-  document.querySelector('#zoom').value = 65;
-  canvas.remove(canvas.getObjects()[0]);
-  fabricImage = new fabric.Image.fromURL(canvasBuffer.toDataURL('image/png'), function(img) {
-    canvas.add(img);
-    canvas.centerObject(canvas.getObjects()[0]);
-  });
+  photo.style.width = video.style.width;
+  photo.style.height = video.style.height;
 }
 
 startbutton.addEventListener('click', function(ev){
   takepicture();
   ev.preventDefault();
 }, false);
-
-document.querySelector('#save').addEventListener('click', function(ev) {
-  photo_resultat.src = canvas.toDataURL({
-        format: 'png',
-        quality: 1
-  });
-  canvas.getObjects()[0].clipPath = null;
-})
-
-document.querySelector('#reset').addEventListener('click', function(ev) {
-  canvas.remove(canvas.getObjects()[0]);
-  video.style.opacity = 1;
-})
-
-document.querySelector('#zoom').addEventListener('change', function(ev) {
-  canvas.getObjects()[0].scale(this.value/50);
-  canvas.centerObject(canvas.getObjects()[0]);
-  canvas.renderAll();
-})
