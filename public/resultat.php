@@ -8,10 +8,28 @@ const SCRIPT_NAME = 'generate.sh';
 $args = [
     'qrcode' => FILTER_SANITIZE_STRING
 ];
-
 $GET = filter_input_array(INPUT_GET, $args);
-$output = '/tmp/output';
-$infos = str_getcsv(file_get_contents(SCRIPT_DIR.'db/exemple.csv'), ';');
+$qrcode = $GET['qrcode'] ?? null;
+
+if(!$qrcode) {
+    echo "Aucun qrcode n'a été renseigné";
+    exit(1);
+}
+
+$output = '/tmp/affiche_'.$qrcode;
+
+$csv = array_map(function ($l) {
+    return str_getcsv($l, ';');
+}, file(SCRIPT_DIR.'db/exemple.csv'));
+
+$key = array_search($qrcode, array_column($csv, 0));
+
+if ($key === false) {
+    echo "Aucun qrcode ne correspond";
+    exit(1);
+}
+
+$infos = $csv[$key];
 
 shell_exec(
     BIN_DIR.SCRIPT_NAME . ' '

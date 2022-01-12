@@ -10,7 +10,7 @@ var constraints = window.constraints = {
 var startbutton  = document.querySelector('#take')
 var errorElement = document.querySelector('#errorMsg');
 var streaming = false
-var width = 1700;
+var width = 2800;
 var height = 0;
 var fabricImage = null;
 
