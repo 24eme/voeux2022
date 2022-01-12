@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="dessin.svg"
+   sodipodi:docname="dessin_droite.svg"
    inkscape:export-filename="exemples/output.pdf.png"
    inkscape:export-xdpi="60"
    inkscape:export-ydpi="60"
@@ -35,7 +35,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1714" />
+     inkscape:current-layer="g1242" />
   <defs
      id="defs2">
     <rect
@@ -166,16 +166,16 @@
              transform="translate(12.440741,-1.569486)"><tspan
                x="179.77899"
                y="88.763199"
-               id="tspan20815">Coller sa<tspan
+               id="tspan1077">Coller sa<tspan
    y="88.763199"
-   id="tspan20817"> </tspan></tspan><tspan
+   id="tspan1079"> </tspan></tspan><tspan
                x="179.77899"
                y="93.763198"
-               id="tspan20819">photo ici
+               id="tspan1081">photo ici
 </tspan><tspan
                x="179.77899"
                y="98.763198"
-               id="tspan20821">ou</tspan></text>
+               id="tspan1083">ou</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:3.88056px;line-height:5px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;white-space:pre;inline-size:16.7377;opacity:0.490444;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -186,16 +186,16 @@
              transform="translate(7.8310703,-1.784295)"><tspan
                x="192.80212"
                y="142.70663"
-               id="tspan20825"><tspan
-                 style="text-align:center;text-anchor:middle"
-                 id="tspan20823">Scanner</tspan><tspan
-                 y="142.70663"
-                 id="tspan20827"> </tspan></tspan><tspan
+               id="tspan1087"><tspan
+   style="text-align:center;text-anchor:middle"
+   id="tspan1085">Scanner</tspan><tspan
+   y="142.70663"
+   id="tspan1089"> </tspan></tspan><tspan
                x="192.80212"
                y="147.70664"
-               id="tspan20831"><tspan
+               id="tspan1093"><tspan
                  style="text-align:center;text-anchor:middle"
-                 id="tspan20829">le qrcode</tspan></tspan></text>
+                 id="tspan1091">le qrcode</tspan></tspan></text>
           <image
              width="37.041668"
              height="37.041668"
@@ -213,12 +213,12 @@
          inkscape:label="footer"
          style="display:inline">
         <image
-           width="209.97333"
-           height="297.17999"
+           width="210"
+           height="297"
            preserveAspectRatio="none"
            style="image-rendering:optimizeSpeed"
            xlink:href="../footer/template_footer.png"
-           id="image1055"
+           id="image951"
            x="13.802471"
            y="-14.244589" />
       </g>
@@ -237,15 +237,15 @@
            inkscape:label="2022"><tspan
              x="151.46451"
              y="10.484972"
-             id="tspan1274"><tspan
+             id="tspan1097"><tspan
                style="font-weight:bold;font-family:Waree;-inkscape-font-specification:'Waree, Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#000000"
-               id="tspan1272">AAATEMPLATEAAA
+               id="tspan1095">AAATEMPLATEAAA
 </tspan></tspan><tspan
              x="151.46451"
              y="30.713262"
-             id="tspan1278"><tspan
+             id="tspan1101"><tspan
                style="font-weight:bold;font-family:Waree;-inkscape-font-specification:'Waree, Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#000000"
-               id="tspan1276">BBBTEMPLATEBBB</tspan></tspan></text>
+               id="tspan1099">BBBTEMPLATEBBB</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,25.359359,-26.927243)"
@@ -256,9 +256,9 @@
            inkscape:label="slogan"><tspan
              x="89.791494"
              y="369.38901"
-             id="tspan1282"><tspan
+             id="tspan1105"><tspan
                style="font-weight:bold;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle"
-               id="tspan1957">« CCCTEMPLATECCC »</tspan></tspan></text>
+               id="tspan1103">« CCCTEMPLATECCC »</tspan></tspan></text>
         <rect
            style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.60787;stroke-opacity:1"
            id="rect59043"
