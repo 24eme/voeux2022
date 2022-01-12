@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr_FR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div style="position:relative; width: 600px; height: 450px; display: inline-block;">
+        <video id="video" style="position: absolute; top: 0; left: 0;"></video>
+        <div style="position: absolute; top: 50px; left: 175px; height: 350px; width: 250px; border: 1px solid #000; border-radius: 70%;">
+            <canvas id="portrait" style="border-radius: 70%;"></canvas>
+        </div>
+        </div>
+        <img id="photo_resultat" style="display: inline-block;" src="" />
+        <div>
+            <input type="range" id="zoom" name="volume" min="30" max="100" value="65" style="width: 600px;"><br />
+            <button id="startbutton" style="margin-top: 10px;">Prendre une photo</button>
+            <button id="reset" style="margin-top: 10px;">Recommencer</button>
+            <button id="save" style="margin-top: 10px;">Sauvegarder</button>
+        </div>
+        <div id="errorMsg"></div>
+        <img id="photo" src="" style="visibility: hidden" />
+        <script src="https://unpkg.com/fabric@4.6.0/dist/fabric.min.js"></script>
+        <script src="app.js"></script>
+    </body>    
+</html>
