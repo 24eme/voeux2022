@@ -9,7 +9,7 @@
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="dessin.svg"
-   inkscape:export-filename="/data/work/voeux2022/affiche/footer/oblique_24eme.png"
+   inkscape:export-filename="exemples/output.pdf.png"
    inkscape:export-xdpi="60"
    inkscape:export-ydpi="60"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -211,7 +211,7 @@
            height="297.17999"
            preserveAspectRatio="none"
            style="image-rendering:optimizeSpeed"
-           xlink:href="../footer/oblique_24eme.png"
+           xlink:href="../footer/template_footer.png"
            id="image1055"
            x="13.802471"
            y="-14.244589" />
