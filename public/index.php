@@ -21,9 +21,10 @@ if(!$qrcode) {
     </head>
     <body style="margin: 0; padding: 0;">
         <div style="position: relative; margin: 0; padding: 0;">
-        <video id="camera" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0; width: 100%;"></video>
+        <video id="camera" style="margin: 0; padding: 0; width: 100%;"></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
-        <img src="tenues/costard.png" style="width: 100%; position: absolute; top: 20px; left: 0; margin: 0; padding: 0;" />
+        <img src="tenue/homme_obama.png" style="width: 100%; position: absolute; bottom: -40px; left: 0; margin: 0; padding: 0;" />
+        <div style="bottom: -40px; background: #fff; height: 44px; width: 100%; position: absolute "></div>
         </div>
         <button id="take" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 0;">Prendre la photo</button>
         <div id="errorMsg"></div>
