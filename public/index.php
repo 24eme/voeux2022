@@ -19,6 +19,11 @@ $csv = array_map(function ($l) {
 }, file(SCRIPT_DIR.'db/exemple.csv'));
 
 $key = array_search($qrcode, array_column($csv, 0));
+if ($key === false) {
+    echo "Aucun qrcode ne correspond";
+    exit(1);
+}
+
 $infos = $csv[$key];
 
 ?>
