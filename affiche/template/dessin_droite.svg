@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="dessin.svg"
-   inkscape:export-filename="/data/work/voeux2022/affiche/footer/oblique_24eme.png"
+   sodipodi:docname="dessin_droite.svg"
+   inkscape:export-filename="exemples/output.pdf.png"
    inkscape:export-xdpi="60"
    inkscape:export-ydpi="60"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -35,7 +35,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1714" />
+     inkscape:current-layer="g1242" />
   <defs
      id="defs2">
     <rect
@@ -144,52 +144,58 @@
            x="108.92094"
            y="68.852798"
            inkscape:label="tenue" />
-        <ellipse
-           style="fill:#ffffff;stroke:#ffffff;stroke-width:0.499999;stroke-dashoffset:2.60787"
-           id="path1156"
-           cx="192.31317"
-           cy="116.03648"
-           rx="23.220068"
-           ry="34.802269"
-           inkscape:label="tête" />
         <g
            id="g976"
            inkscape:label="intérieur tête"
            style="display:inline">
+          <ellipse
+             style="fill:#ffffff;stroke:#ffffff;stroke-width:0.499999;stroke-dashoffset:2.60787"
+             id="path1156"
+             cx="192.31317"
+             cy="116.03648"
+             rx="23.220068"
+             ry="34.802269"
+             inkscape:label="tête" />
           <text
              xml:space="preserve"
-             style="font-size:3.88056px;line-height:5px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;opacity:0.490444;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             x="192.2278"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:5px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:19.6842;opacity:0.490444;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="179.77899"
              y="88.763199"
              id="text100859"
-             inkscape:label="scanner"><tspan
-               sodipodi:role="line"
-               id="tspan100857"
-               style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-opacity:1"
-               x="192.2278"
-               y="88.763199">Scanner</tspan><tspan
-               sodipodi:role="line"
-               style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-opacity:1"
-               x="192.2278"
-               y="93.763199"
-               id="tspan100861">le qrcode permet</tspan></text>
+             inkscape:label="scanner"
+             transform="translate(12.440741,-1.569486)"><tspan
+               x="179.77899"
+               y="88.763199"
+               id="tspan1077">Coller sa<tspan
+   y="88.763199"
+   id="tspan1079"> </tspan></tspan><tspan
+               x="179.77899"
+               y="93.763198"
+               id="tspan1081">photo ici
+</tspan><tspan
+               x="179.77899"
+               y="98.763198"
+               id="tspan1083">ou</tspan></text>
           <text
              xml:space="preserve"
-             style="font-size:3.88056px;line-height:5px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;opacity:0.490444;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             style="font-size:3.88056px;line-height:5px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;white-space:pre;inline-size:16.7377;opacity:0.490444;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              x="192.80212"
              y="142.70663"
              id="text92933"
-             inkscape:label="bas"><tspan
-               sodipodi:role="line"
-               style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-opacity:1"
+             inkscape:label="bas"
+             transform="translate(7.8310703,-1.784295)"><tspan
                x="192.80212"
                y="142.70663"
-               id="tspan92947">de terminer </tspan><tspan
-               sodipodi:role="line"
-               style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-opacity:1"
+               id="tspan1087"><tspan
+   style="text-align:center;text-anchor:middle"
+   id="tspan1085">Scanner</tspan><tspan
+   y="142.70663"
+   id="tspan1089"> </tspan></tspan><tspan
                x="192.80212"
-               y="147.70663"
-               id="tspan93939">l'affiche</tspan></text>
+               y="147.70664"
+               id="tspan1093"><tspan
+                 style="text-align:center;text-anchor:middle"
+                 id="tspan1091">le qrcode</tspan></tspan></text>
           <image
              width="37.041668"
              height="37.041668"
@@ -207,12 +213,12 @@
          inkscape:label="footer"
          style="display:inline">
         <image
-           width="209.97333"
-           height="297.17999"
+           width="211"
+           height="297"
            preserveAspectRatio="none"
            style="image-rendering:optimizeSpeed"
-           xlink:href="../footer/oblique_24eme.png"
-           id="image1055"
+           xlink:href="../footer/template_footer.png"
+           id="image951"
            x="13.802471"
            y="-14.244589" />
       </g>
@@ -228,31 +234,38 @@
            y="10.484972"
            id="text3751"
            transform="translate(-151.85895,13.947692)"
-           inkscape:label="2022"><tspan
+           inkscape:label="2022 AAA"><tspan
              x="151.46451"
              y="10.484972"
-             id="tspan1274"><tspan
+             id="tspan2117"><tspan
                style="font-weight:bold;font-family:Waree;-inkscape-font-specification:'Waree, Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#000000"
-               id="tspan1272">AAATEMPLATEAAA
-</tspan></tspan><tspan
+               id="tspan2115">AAATEMPLATEAAA</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;line-height:20px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;white-space:pre;inline-size:212.433;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           x="151.46451"
+           y="10.484972"
+           id="text3751-9"
+           transform="translate(-152.23897,33.870781)"
+           inkscape:label="2022 BBB"><tspan
              x="151.46451"
-             y="30.713262"
-             id="tspan1278"><tspan
+             y="10.484972"
+             id="tspan2121"><tspan
                style="font-weight:bold;font-family:Waree;-inkscape-font-specification:'Waree, Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#000000"
-               id="tspan1276">BBBTEMPLATEBBB</tspan></tspan></text>
+               id="tspan2119">BBBTEMPLATEBBB</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,25.359359,-26.927243)"
            id="text44753"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:63.6364px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect44755);fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:52.92px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;shape-inside:url(#rect44755)"
            x="957.65906"
            y="0"
            inkscape:label="slogan"><tspan
              x="89.791494"
-             y="369.38901"
-             id="tspan1282"><tspan
+             y="364.03081"
+             id="tspan2125"><tspan
                style="font-weight:bold;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle"
-               id="tspan1280">« CCCTEMPLATECCC »</tspan></tspan></text>
+               id="tspan2123">« CCCTEMPLATECCC »</tspan></tspan></text>
         <rect
            style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.60787;stroke-opacity:1"
            id="rect59043"
