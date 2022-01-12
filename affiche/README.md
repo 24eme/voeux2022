@@ -5,3 +5,17 @@
 genère :
 
 ![Affiche Foo Bar](exemples/foobar.pdf.png "2022 avec Foo Bar")
+
+## Détourage de la photo
+
+Installation de l'outil de détourage :
+
+```
+sudo pip install backgroundremover
+```
+
+Détourage de l'image : 
+
+```
+backgroundremover -a -ae 5 -i image.png -o image_decoupe.png
+```
