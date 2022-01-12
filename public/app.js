@@ -5,12 +5,12 @@ var video = document.querySelector('#camera');
 var photo = document.querySelector('#photo');
 var constraints = window.constraints = {
   audio: false,
-  video: { facingMode: "user" }
+  video: true
 };
 var startbutton  = document.querySelector('#take')
 var errorElement = document.querySelector('#errorMsg');
 var streaming = false
-var width = 700;
+var width = 1700;
 var height = 0;
 var fabricImage = null;
 
