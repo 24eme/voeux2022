@@ -60,6 +60,15 @@ function errorMsg(msg, error) {
   }
 }
 
+function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+};
+
 function takepicture() {
   var canvasBuffer = document.createElement('canvas');
   canvasBuffer.width = video.width;
@@ -69,6 +78,15 @@ function takepicture() {
   photo.setAttribute('src', canvasBuffer.toDataURL('image/png'));
   photo.style.width = video.style.width;
   photo.style.height = video.style.height;
+  
+  var filename = "camera.png";
+  var dataTransfer = new DataTransfer();
+  dataTransfer.items.add(new File([dataURLtoBlob(photo.src)], filename, {
+        type: 'image/png'
+  }));
+  document.getElementById('input_camera').files = dataTransfer.files;
+  console.log(document.getElementById('input_camera').files);
+  document.getElementById('form_camera').submit();
 }
 
 startbutton.addEventListener('click', function(ev){
