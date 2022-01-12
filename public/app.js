@@ -5,7 +5,7 @@ var video = document.querySelector('#camera');
 var photo = document.querySelector('#photo');
 var constraints = window.constraints = {
   audio: false,
-  video: true
+  video: { facingMode: "user" }
 };
 var startbutton  = document.querySelector('#take')
 var errorElement = document.querySelector('#errorMsg');
