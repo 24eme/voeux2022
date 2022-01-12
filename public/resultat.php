@@ -11,7 +11,7 @@ $args = [
 
 $GET = filter_input_array(INPUT_GET, $args);
 $output = '/tmp/output';
-$infos = str_getcsv(file_get_contents(SCRIPT_DIR.'db/exemple.csv'));
+$infos = str_getcsv(file_get_contents(SCRIPT_DIR.'db/exemple.csv'), ';');
 
 shell_exec(
     BIN_DIR.SCRIPT_NAME . ' '
@@ -23,8 +23,7 @@ shell_exec(
         $infos[4],
         SCRIPT_DIR.$infos[5],
         SCRIPT_DIR.$infos[6],
-        SCRIPT_DIR.$infos[7],
-        $GET['qrcode']
+        SCRIPT_DIR.$infos[7]
     ])
 );
 
