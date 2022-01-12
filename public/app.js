@@ -90,6 +90,7 @@ document.querySelector('#save').addEventListener('click', function(ev) {
         format: 'png',
         quality: 1
   });
+  canvas.getObjects()[0].clipPath = null;
 })
 
 document.querySelector('#reset').addEventListener('click', function(ev) {
