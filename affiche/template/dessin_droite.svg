@@ -213,7 +213,7 @@
          inkscape:label="footer"
          style="display:inline">
         <image
-           width="210"
+           width="211"
            height="297"
            preserveAspectRatio="none"
            style="image-rendering:optimizeSpeed"
@@ -234,31 +234,38 @@
            y="10.484972"
            id="text3751"
            transform="translate(-151.85895,13.947692)"
-           inkscape:label="2022"><tspan
+           inkscape:label="2022 AAA"><tspan
              x="151.46451"
              y="10.484972"
-             id="tspan1097"><tspan
+             id="tspan2117"><tspan
                style="font-weight:bold;font-family:Waree;-inkscape-font-specification:'Waree, Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#000000"
-               id="tspan1095">AAATEMPLATEAAA
-</tspan></tspan><tspan
+               id="tspan2115">AAATEMPLATEAAA</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;line-height:20px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;white-space:pre;inline-size:212.433;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           x="151.46451"
+           y="10.484972"
+           id="text3751-9"
+           transform="translate(-152.23897,33.870781)"
+           inkscape:label="2022 BBB"><tspan
              x="151.46451"
-             y="30.713262"
-             id="tspan1101"><tspan
+             y="10.484972"
+             id="tspan2121"><tspan
                style="font-weight:bold;font-family:Waree;-inkscape-font-specification:'Waree, Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke:#000000"
-               id="tspan1099">BBBTEMPLATEBBB</tspan></tspan></text>
+               id="tspan2119">BBBTEMPLATEBBB</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,25.359359,-26.927243)"
            id="text44753"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:63.6364px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect44755);fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:52.92px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;shape-inside:url(#rect44755)"
            x="957.65906"
            y="0"
            inkscape:label="slogan"><tspan
              x="89.791494"
-             y="369.38901"
-             id="tspan1105"><tspan
+             y="364.03081"
+             id="tspan2125"><tspan
                style="font-weight:bold;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle"
-               id="tspan1103">« CCCTEMPLATECCC »</tspan></tspan></text>
+               id="tspan2123">« CCCTEMPLATECCC »</tspan></tspan></text>
         <rect
            style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.60787;stroke-opacity:1"
            id="rect59043"
