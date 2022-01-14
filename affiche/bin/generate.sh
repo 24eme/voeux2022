@@ -1,6 +1,6 @@
 #!/bin/bash
 
-output=$1 #in output/
+realoutput=$1 #in output/
 template=$2 #in template/
 aaa=$3
 bbb=$4
@@ -9,6 +9,10 @@ fond=$6
 footer=$7
 tenue=$8
 qrcode=$9
+
+output="output/"$$".pdf"
+
+cd $(dirname $0)/..
 
 echo "s|fond/template_fond.png|"$fond"|" > $output".sed"
 echo "s|tenue/template_tenue.png|"$tenue"|" >> $output".sed"
@@ -25,5 +29,8 @@ cat $template | tr '\n' ' ' | sed -f $output".sed" > $output".svg"
 
 inkscape $output".svg" --export-area-page --batch-process --export-type=pdf --export-filename=$output
 inkscape $output".svg" --export-area-page --batch-process --export-type=png --export-filename=$output".png"
+
+mv $output $realoutput
+mv $output".png" $realoutput".png"
 
 rm $output".sed" $output".svg"
