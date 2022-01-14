@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <h2>Choisissez le texte de votre affiche</h2>
-                    <form action="affiche.php" method="GET">
+                    <form action="choix.php" method="GET">
                         <div class="mb-3">
                             <label for="input_titre_1" class="form-label">Titre de la 1ère ligne</label>
                             <input autofocus="autofocus" id="input_titre_1" type="text" placeholder="2022 avec" class="form-control"/>
