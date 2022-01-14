@@ -134,7 +134,17 @@
          id="g1242"
          inkscape:label="personnage"
          style="display:inline"
-         transform="translate(-139.65492,24.258775)">
+         transform="translate(-73.170304,17.991672)">
+        <image
+           width="144.79041"
+           height="144.79041"
+           preserveAspectRatio="none"
+           style="image-rendering:optimizeSpeed"
+           xlink:href="../tete/template_tete.png"
+           id="image872"
+           x="117.49514"
+           y="32.037182"
+           inkscape:label="photo" />
         <image
            width="215.3732"
            height="127.26183"
@@ -143,7 +153,7 @@
            xlink:href="../tenue/template_tenue.png"
            id="image877"
            x="82.833527"
-           y="120.65429"
+           y="120.65427"
            inkscape:label="tenue" />
         <g
            id="g976"
