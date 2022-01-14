@@ -37,8 +37,7 @@ $infos = $csv[$key];
         <div style="position: relative; margin: 0; padding: 0;">
         <video id="camera" style="margin: 0; padding: 0; width: 100%;"></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
-        <img src="<?php echo $infos[7] ?>" style="width: 100%; position: absolute; bottom: -40px; left: 0; margin: 0; padding: 0;" />
-        <div style="bottom: -40px; background: #fff; height: 44px; width: 100%; position: absolute "></div>
+        <img src="tenue/template_tenue.png" style="width: 150%; position: absolute; bottom: -60%; left: -25%; margin: 0; padding: 0;" />
         </div>
         <button id="take" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 0;">Prendre la photo</button>
         <div id="errorMsg"></div>
