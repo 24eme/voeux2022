@@ -22,12 +22,6 @@ $GET = filter_input_array(INPUT_GET, $args);
     <body>
         <div class="container pb-5">
             <div class="row mt-2 mb-3">
-                <div class="col-md-5 text-center" >
-                    <img id="image_affiche" class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
-                    <div class="spinner-border mt-5" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
                 <div class="col-md-7">
                     <div class="card">
                         <div class="card-header">Texte</div>
@@ -70,6 +64,9 @@ $GET = filter_input_array(INPUT_GET, $args);
                         </div>
                     </div>
                 </div>
+                <div class="col-md-5 text-center pt-1">
+                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
+                </div>
             </div>
         </div>
         <div class="fixed-bottom bg-light p-2">
@@ -94,7 +91,6 @@ $GET = filter_input_array(INPUT_GET, $args);
             document.querySelectorAll('input').forEach(function(input) {
                 input.addEventListener('change', function(event) {
                     updateCSV();
-                    document.querySelector('#image_affiche').src = "";
                     document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
                 });
             });
