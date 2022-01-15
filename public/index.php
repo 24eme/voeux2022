@@ -65,7 +65,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                     </div>
                 </div>
                 <div class="col-md-5 text-center" >
-                    <img class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" loading="lazy" />
+                    <img class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
                     <div class="spinner-border mt-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
