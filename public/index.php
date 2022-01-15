@@ -22,6 +22,12 @@ $GET = filter_input_array(INPUT_GET, $args);
     <body>
         <div class="container pb-5">
             <div class="row mt-2 mb-3">
+                <div class="col-md-5 text-center" >
+                    <img class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
+                    <div class="spinner-border mt-5" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
                 <div class="col-md-7">
                     <div class="card">
                         <div class="card-header">Texte</div>
@@ -54,7 +60,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                     <div class="card mt-2">
                         <div class="card-header">Pied de page</div>
                         <div class="card-body p-1 ">
-                            <?php foreach($footers as $key => $f): ?><input type="radio" name="footer" class="btn-check" id="btn_footer_<?php echo $key ?>" <?php if($f == $footer): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $f ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image shadow" for="btn_footer_<?php echo $key ?>"><img style="height: 50px;" src="footer/miniature/<?php echo $f ?>" /></label><?php endforeach; ?>
+                            <?php foreach($footers as $key => $f): ?><input type="radio" name="footer" class="btn-check" id="btn_footer_<?php echo $key ?>" <?php if($f == $footer): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $f ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image" for="btn_footer_<?php echo $key ?>"><img style="height: 50px;" src="footer/miniature/<?php echo $f ?>" /></label><?php endforeach; ?>
                         </div>
                     </div>
                     <div class="card mt-2">
@@ -62,12 +68,6 @@ $GET = filter_input_array(INPUT_GET, $args);
                         <div class="card-body p-1 ">
                             <?php foreach($templates as $key => $t): ?><input type="radio" name="template" class="btn-check" id="btn_template_<?php echo $key ?>" <?php if($t == $template): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $t ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image" for="btn_template_<?php echo $key ?>"><img style="height: 100px;" src="template/miniature/<?php echo str_replace(".svg", ".png", $t) ?>" /></label><?php endforeach; ?>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-5 text-center" >
-                    <img class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
-                    <div class="spinner-border mt-5" role="status">
-                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
