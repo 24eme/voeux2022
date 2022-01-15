@@ -34,3 +34,6 @@ header('Content-type: image/png');
 header('Content-size: '.filesize($fileImage));
 
 fpassthru($fp);
+
+unlink($fileImage);
+unlink(str_replace(".png", "", $fileImage));
