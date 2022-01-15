@@ -23,7 +23,7 @@ $GET = filter_input_array(INPUT_GET, $args);
         <div class="container pb-5">
             <div class="row mt-2 mb-3">
                 <div class="col-md-5 text-center" >
-                    <img class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
+                    <img id="image_affiche" class="img-thumbnail sticky-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
                     <div class="spinner-border mt-5" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
@@ -91,9 +91,11 @@ $GET = filter_input_array(INPUT_GET, $args);
                     updateCSV();
                 });
             });
-            document.querySelectorAll('input[type=radio]').forEach(function(input) {
+            document.querySelectorAll('input').forEach(function(input) {
                 input.addEventListener('change', function(event) {
                     updateCSV();
+                    document.querySelector('#image_affiche').src = "";
+                    document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
                 });
             });
             updateCSV();
