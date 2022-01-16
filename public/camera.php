@@ -8,18 +8,26 @@ require __DIR__.'/config.inc.php';
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     </head>
-    <body style="margin: 0; padding: 0;">
+    <body style="margin: 0; padding: 0; overflow-x: hidden;">
         <div style="position: relative; margin: 0; padding: 0;">
         <video id="camera" style="margin: 0; padding: 0; width: 100%;"></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
         <img src="tenue/<?php echo $tenue ?>" style="width: 150%; position: absolute; bottom: -60%; left: -25%; margin: 0; padding: 0;" />
         </div>
-        <button id="take" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 0;">Prendre la photo</button>
         <div id="errorMsg"></div>
-        <form id="form_camera" action="photo.php?qrcode=<?php echo $qrcode ?>" method="POST" enctype="multipart/form-data">
-            <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px;" type="file" />
-        </form>
+        <div class="fixed-bottom bg-light p-2">
+            <div class="container">
+                <div class="d-grid gap-2">
+                    <button id="take" class="btn btn-primary d-block">Prendre la photo</button>
+                </div>
+                <form id="form_camera" action="photo.php?qrcode=<?php echo $qrcode ?>" method="POST" enctype="multipart/form-data">
+                    <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px; display:none;" type="file" />
+                </form>
+            </div>
+        </div>
         <script src="app.js"></script>
     </body>    
 </html>
