@@ -13,6 +13,7 @@ $GET = filter_input_array(INPUT_GET, $args);
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <style>
             .btn-check:checked + label.btn-radio-image, .btn-check:checked + label.btn-radio-image:active {
                 opacity: 0.3 !important;
@@ -65,17 +66,35 @@ $GET = filter_input_array(INPUT_GET, $args);
                     </div>
                 </div>
                 <div class="col-md-5 text-center pt-1">
+                    <a name="affiche"></a>
                     <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
                 </div>
             </div>
         </div>
         <div class="fixed-bottom bg-light p-2">
             <div class="container">
-                <form action="index.php" method="GET">
-                <div class="input-group">
-                    <button class="btn btn-primary" type="submit">Valider et voir l'affiche</button>
-                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" />
-                </div>
+                <form action="camera.php" method="GET">
+                    <div class="d-none d-md-block">
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="input-group">
+                                    <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i></button>
+                                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" />
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 col-3">
+                                <button class="btn btn-primary" type="submit">Continuer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-md-none row">
+                        <div class="d-grid gap-2 col-6">
+                            <a href="#affiche" class="btn btn-secondary">Voir l'affiche</a>
+                        </div>
+                        <div class="d-grid gap-2 col-6">
+                            <button class="btn btn-primary" type="submit">Continuer</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -94,6 +113,10 @@ $GET = filter_input_array(INPUT_GET, $args);
                     document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
                 });
             });
+            document.querySelector('#btn_csv_copy').addEventListener('click', function() {
+                navigator.clipboard.writeText(document.querySelector('#input_csv').value);
+                document.querySelector('#input_csv').focus();
+            })
             updateCSV();
         </script>
     </body>
