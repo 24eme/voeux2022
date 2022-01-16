@@ -14,8 +14,10 @@ var width = 1800;
 var height = 0;
 var fabricImage = null;
 
+
 navigator.mediaDevices.getUserMedia(constraints)
 .then(function(stream) {
+  document.querySelector('#tenue').style.bottom = "-"+document.querySelector('#tenue').clientHeight * 0.45+"px";
   var videoTracks = stream.getVideoTracks();
   console.log('Got stream with constraints:', constraints);
   console.log('Using video device: ' + videoTracks[0].label);

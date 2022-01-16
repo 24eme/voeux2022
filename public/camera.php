@@ -15,7 +15,7 @@ require __DIR__.'/config.inc.php';
         <div style="position: relative; margin: 0; padding: 0;">
         <video id="camera" style="margin: 0; padding: 0; width: 100%;"></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
-        <img src="tenue/<?php echo $tenue ?>" style="width: 150%; position: absolute; bottom: -60%; left: -25%; margin: 0; padding: 0;" />
+        <img id="tenue" src="tenue/<?php echo $tenue ?>" style="width: 150%; position: absolute; bottom: 0; left: -25%; margin: 0; padding: 0;" />
         </div>
         <div id="errorMsg"></div>
         <div class="fixed-bottom bg-light p-2">
