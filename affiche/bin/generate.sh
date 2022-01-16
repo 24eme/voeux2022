@@ -1,22 +1,38 @@
 #!/bin/bash
 
-realoutput=$1 #in output/
-template=$2 #in template/
+realoutput=$1 #peut être relatif ou absolu
+template=$2 #in template/ (relatif à la racine du projet)
 aaa=$3
 bbb=$4
 ccc=$5
-fond=$6
-footer=$7
-tenue=$8
-qrcode=$9
+fond=$6 #(relatif à la racine du projet)
+footer=$7 #(relatif à la racine du projet)
+tenue=$8 #(relatif à la racine du projet)
+qrcodecontent_ou_tete=$9 #text ou chemin de la photo
 
 output="output/"$$".pdf"
 
 cd $(dirname $0)/..
 
+if test -f $qrcodecontent_ou_tete; then
+    tete=$qrcodecontent_ou_tete
+    tetepng=$output"_tete.png"
+    tetepngresized=$output"_teteresized.png"
+    backgroundremover -a -ae 5 -i $tete -o $tetepng
+    convert $tetepng -background 'rgba(0,0,0,0)' -gravity south -extent 1800x1800 -crop 1000x1800+0+0 -gravity south -extent 1800x1800 $tetepngresized
+else
+    qrcodetxt=$qrcodecontent_ou_tete
+    qrcode=$output".qrcode.png"
+    echo "$qrcodetxt" | qrencode -m 1 -l H -o $qrcode
+fi
 echo "s|fond/template_fond.png|"$fond"|" > $output".sed"
 echo "s|tenue/template_tenue.png|"$tenue"|" >> $output".sed"
 echo "s|footer/template_footer.png|"$footer"|" >> $output".sed"
+if test "$tetepng"; then
+echo "s|tete/template_tete.png|"$tetepngresized"|" >> $output".sed"
+else
+echo "s|tete/template_tete.png|tete/tete_transparente.png|" >> $output".sed"
+fi
 echo "s|AAATEMPLATEAAA|"$aaa"|" >> $output".sed"
 echo "s|BBBTEMPLATEBBB|"$bbb"|" >> $output".sed"
 echo "s|CCCTEMPLATECCC|"$ccc"|" >> $output".sed"
@@ -33,4 +49,4 @@ inkscape $output".svg" --export-area-page --batch-process --export-type=png --ex
 mv $output $realoutput
 mv $output".png" $realoutput".png"
 
-rm $output".sed" $output".svg"
+rm $output".sed" $output".svg" $tetepngresized $tetepng $qrcode
