@@ -14,7 +14,7 @@ output="output/"$$""
 
 cd $(dirname $0)/..
 
-if test -f $qrcodecontent_ou_tete; then
+if test -f "$qrcodecontent_ou_tete"; then
     tete=$qrcodecontent_ou_tete
     tetepng=$output"_tete.png"
     tetepngresized=$output"_teteresized.png"
