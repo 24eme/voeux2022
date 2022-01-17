@@ -2,11 +2,6 @@
 
 require __DIR__.'/config.inc.php'; 
 
-$args = [
-    'csv' => FILTER_SANITIZE_STRING
-];
-$GET = filter_input_array(INPUT_GET, $args);
-
 ?>
 <!doctype html>
 <html lang="fr_FR">
@@ -68,7 +63,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                 </div>
                 <div class="col-md-5 text-center pt-1">
                     <a name="affiche"></a>
-                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
+                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo urlencode($csv) ?>" />
                 </div>
             </div>
         </div>
@@ -80,7 +75,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                             <div class="col-9">
                                 <div class="input-group">
                                     <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i></button>
-                                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" />
+                                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" value="<?php echo $csv ?>" />
                                 </div>
                             </div>
                             <div class="d-grid gap-2 col-3">
