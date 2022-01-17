@@ -54,7 +54,7 @@ require __DIR__.'/config.inc.php';
                             <?php foreach($footers as $key => $f): ?><input type="radio" name="footer" class="btn-check" id="btn_footer_<?php echo $key ?>" <?php if($f == $footer): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $f ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image" for="btn_footer_<?php echo $key ?>"><img style="height: 50px;" src="footer/miniature/<?php echo $f ?>" /></label><?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="card mt-2">
+                    <div class="card mt-2 mb-1">
                         <div class="card-header">Disposition</div>
                         <div class="card-body p-1 ">
                             <?php foreach($templates as $key => $t): ?><input type="radio" name="template" class="btn-check" id="btn_template_<?php echo $key ?>" <?php if($t == $template): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $t ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image" for="btn_template_<?php echo $key ?>"><img style="height: 100px;" src="template/miniature/<?php echo str_replace(".svg", ".png", $t) ?>" /></label><?php endforeach; ?>
