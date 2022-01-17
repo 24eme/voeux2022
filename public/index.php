@@ -90,7 +90,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                     </div>
                     <div class="d-md-none row">
                         <div class="d-grid gap-2 col-6">
-                            <a href="#affiche" class="btn btn-secondary">Voir l'affiche</a>
+                            <a href="#affiche" class="btn btn-outline-secondary">Voir l'affiche</a>
                         </div>
                         <div class="d-grid gap-2 col-6">
                             <button class="btn btn-primary" type="submit">Continuer</button>
