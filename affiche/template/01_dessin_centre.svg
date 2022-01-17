@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="dessin_centre.svg"
+   sodipodi:docname="01_dessin_centre.svg"
    inkscape:export-filename="exemples/output.pdf.png"
    inkscape:export-xdpi="60"
    inkscape:export-ydpi="60"
@@ -136,14 +136,14 @@
          style="display:inline"
          transform="translate(-73.170304,17.991672)">
         <image
-           width="144.79041"
-           height="144.79041"
+           width="109.34644"
+           height="108.87827"
            preserveAspectRatio="none"
            style="image-rendering:optimizeSpeed"
            xlink:href="../tete/template_tete.png"
            id="image872"
-           x="117.49514"
-           y="32.037182"
+           x="136.24712"
+           y="78.855698"
            inkscape:label="photo" />
         <image
            width="215.3732"
