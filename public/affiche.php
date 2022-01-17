@@ -11,6 +11,11 @@ if(!$slogan) {
 
 $fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.png';
 
+$tete = "http://";
+if(file_exists(SCRIPT_DIR.'/camera/'.md5($csv).'.png')) {
+    $tete = 'camera/'.md5($csv).'.png';
+}
+
 shell_exec(
     BIN_DIR.'/'.SCRIPT_NAME . ' '
     . implode(' ', [
@@ -22,7 +27,7 @@ shell_exec(
         'fond/'.$fond,
         'footer/'.$footer,
         'tenue/'.$tenue,
-        'http://'
+        $tete
     ])
 );
 

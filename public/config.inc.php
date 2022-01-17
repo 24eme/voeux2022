@@ -8,7 +8,7 @@ const UPLOAD_DIR = SCRIPT_DIR.'/camera';
 function filter_image($v) {
     if(strpos($v, 'template') !== false) { 
         
-        return false;
+        //return false;
     } 
     
     return strpos($v, ".svg") !== false || strpos($v, ".png") !== false || strpos($v, ".jpg") !== false; 
