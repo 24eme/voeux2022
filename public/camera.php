@@ -26,7 +26,7 @@ require __DIR__.'/config.inc.php';
                     </div>
                     <div id="block-btn-confirmation" class="d-none row">
                         <div class="d-grid gap-2 col-6">
-                            <button class="btn btn-outline-danger">Recommencer</a>
+                            <button id="btn-cancel" class="btn btn-outline-danger" type="button">Recommencer</button>
                         </div>
                         <div class="d-grid gap-2 col-6">
                             <button class="btn btn-success" type="submit">Confirmer</button>

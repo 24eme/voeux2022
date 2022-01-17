@@ -13,6 +13,7 @@ var streaming = false
 var width = 1800;
 var height = 0;
 var fabricImage = null;
+var play = false;
 
 
 navigator.mediaDevices.getUserMedia(constraints)
@@ -55,6 +56,11 @@ video.addEventListener('canplay', function(ev){
   }
 }, false);
 
+video.onplay = (event) => {
+  play = true;
+};
+
+
 function errorMsg(msg, error) {
   errorElement.innerHTML += '<p>' + msg + '</p>';
   if (typeof error !== 'undefined') {
@@ -80,9 +86,6 @@ function takepicture() {
   photo.setAttribute('src', canvasBuffer.toDataURL('image/png'));
   photo.style.width = video.style.width;
   photo.style.height = video.style.height;
-  document.getElementById('block-btn-confirmation').classList.remove('d-none');
-  document.getElementById('block-btn-photo').classList.add('d-none');
-  
   var filename = "camera.png";
   var dataTransfer = new DataTransfer();
   dataTransfer.items.add(new File([dataURLtoBlob(photo.src)], filename, {
@@ -92,6 +95,21 @@ function takepicture() {
 }
 
 startbutton.addEventListener('click', function(ev){
+  if(!play) {
+    video.play();
+    return;
+  }
+  document.getElementById('block-btn-confirmation').classList.remove('d-none');
+  document.getElementById('block-btn-photo').classList.add('d-none');
+  
   takepicture();
   ev.preventDefault();
 }, false);
+
+document.querySelector('#btn-cancel').addEventListener('click', function() {
+  document.getElementById('block-btn-confirmation').classList.add('d-none');
+  document.getElementById('block-btn-photo').classList.remove('d-none');
+  photo.src = "";
+  photo.style.height = 0;
+  photo.style.width = 0;
+})
