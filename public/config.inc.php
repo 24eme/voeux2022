@@ -3,6 +3,7 @@
 const SCRIPT_DIR = __DIR__.'/../affiche';
 const BIN_DIR = SCRIPT_DIR.'/bin';
 const SCRIPT_NAME = 'generate.sh';
+const UPLOAD_DIR = SCRIPT_DIR.'/camera';
 
 function filter_image($v) {
     if(strpos($v, 'template') !== false) { 
@@ -34,7 +35,8 @@ $args = [
 $GET = filter_input_array(INPUT_GET, $args);
 
 if(isset($GET['csv'])) {
-    $csvData = str_getcsv($GET['csv'], ';');
+    $csv = $GET['csv'];
+    $csvData = str_getcsv($csv, ';');
 
     if(isset($csvData[0]) && $csvData[0]) {
         $title1 = $csvData[0];
@@ -57,5 +59,7 @@ if(isset($GET['csv'])) {
     if(isset($csvData[6]) && $csvData[6]) {
         $footer = $csvData[6];
     }
+} else {
+    $csv = $title1.";".$title2.";".$slogan.";".$template.";".$fond.";".$tenue.";".$footer;
 }
-$csv = $title1.";".$title2.";".$slogan.";".$template.";".$fond.";".$tenue.";".$footer;
+    
