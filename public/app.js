@@ -13,9 +13,12 @@ var streaming = false
 var width = 1800;
 var height = 0;
 var fabricImage = null;
+var play = false;
+
 
 navigator.mediaDevices.getUserMedia(constraints)
 .then(function(stream) {
+  document.querySelector('#tenue').style.bottom = "-"+document.querySelector('#tenue').clientHeight * 0.45+"px";
   var videoTracks = stream.getVideoTracks();
   console.log('Got stream with constraints:', constraints);
   console.log('Using video device: ' + videoTracks[0].label);
@@ -53,6 +56,12 @@ video.addEventListener('canplay', function(ev){
   }
 }, false);
 
+video.onplay = (event) => {
+  play = true;
+  startbutton.innerText = "Prendre la photo";
+};
+
+
 function errorMsg(msg, error) {
   errorElement.innerHTML += '<p>' + msg + '</p>';
   if (typeof error !== 'undefined') {
@@ -78,18 +87,31 @@ function takepicture() {
   photo.setAttribute('src', canvasBuffer.toDataURL('image/png'));
   photo.style.width = video.style.width;
   photo.style.height = video.style.height;
-  
   var filename = "camera.png";
   var dataTransfer = new DataTransfer();
   dataTransfer.items.add(new File([dataURLtoBlob(photo.src)], filename, {
         type: 'image/png'
   }));
   document.getElementById('input_camera').files = dataTransfer.files;
-  console.log(document.getElementById('input_camera').files);
-  document.getElementById('form_camera').submit();
 }
 
 startbutton.addEventListener('click', function(ev){
+  if(!play) {
+    video.play();
+    ev.preventDefault();
+    return;
+  }
+  document.getElementById('block-btn-confirmation').classList.remove('d-none');
+  document.getElementById('block-btn-photo').classList.add('d-none');
+  
   takepicture();
   ev.preventDefault();
 }, false);
+
+document.querySelector('#btn-cancel').addEventListener('click', function() {
+  document.getElementById('block-btn-confirmation').classList.add('d-none');
+  document.getElementById('block-btn-photo').classList.remove('d-none');
+  photo.src = "";
+  photo.style.height = 0;
+  photo.style.width = 0;
+})

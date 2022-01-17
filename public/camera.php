@@ -1,30 +1,6 @@
 <?php 
 
-const SCRIPT_DIR = __DIR__.'/../affiche/';
-
-$args = [
-    'qrcode' => FILTER_SANITIZE_STRING
-];
-
-$GET = filter_input_array(INPUT_GET, $args);
-$qrcode = $GET['qrcode']; 
-
-if(!$qrcode) {
-    echo "Aucun qrcode n'a été renseigné";
-    exit(1);
-}
-
-$csv = array_map(function ($l) {
-    return str_getcsv($l, ';');
-}, file(SCRIPT_DIR.'db/exemple.csv'));
-
-$key = array_search($qrcode, array_column($csv, 0));
-if ($key === false) {
-    echo "Aucun qrcode ne correspond";
-    exit(1);
-}
-
-$infos = $csv[$key];
+require __DIR__.'/config.inc.php'; 
 
 ?>
 <!doctype html>
@@ -32,18 +8,34 @@ $infos = $csv[$key];
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <meta name="mobile-web-app-capable" content="yes">
     </head>
-    <body style="margin: 0; padding: 0;">
-        <div style="position: relative; margin: 0; padding: 0;">
-        <video id="camera" style="margin: 0; padding: 0; width: 100%;"></video>
+    <body style="margin: 0; padding: 0; overflow-x: hidden; background: #000;">
+        <div style="position: relative; margin: 0; padding: 0; overflow: hidden;">
+        <video id="camera" style="margin: 0; padding: 0; width: 100%;" autoplay playsinline></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
-        <img src="tenue/template_tenue.png" style="width: 150%; position: absolute; bottom: -60%; left: -25%; margin: 0; padding: 0;" />
+        <img id="tenue" src="tenue/<?php echo $tenue ?>" style="width: 150%; position: absolute; bottom: 0; left: -25%; margin: 0; padding: 0;" />
         </div>
-        <button id="take" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 0;">Prendre la photo</button>
-        <div id="errorMsg"></div>
-        <form id="form_camera" action="photo.php?qrcode=<?php echo $qrcode ?>" method="POST" enctype="multipart/form-data">
-            <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px;" type="file" />
-        </form>
+        <div class="fixed-bottom bg-light p-2" style="z-index: 9999;">
+            <div class="container">
+                <div id="block-btn-photo" class="d-grid gap-2">
+                    <button id="take" class="btn btn-primary d-block" type="button">Démarrer</button>
+                </div>
+                <form id="form_camera" action="photo.php?csv=<?php echo $GET['csv'] ?>" method="POST" enctype="multipart/form-data">
+                    <div id="block-btn-confirmation" class="d-none row">
+                        <div class="d-grid gap-2 col-6">
+                            <button id="btn-cancel" class="btn btn-outline-danger" type="button">Recommencer</button>
+                        </div>
+                        <div class="d-grid gap-2 col-6">
+                            <button class="btn btn-success" type="submit">Confirmer</button>
+                        </div>
+                    </div>
+                    <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px; display:none;" type="file" />
+                </form>
+            </div>
+        </div>
         <script src="app.js"></script>
     </body>    
 </html>
