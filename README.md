@@ -10,6 +10,12 @@ genère :
 
 Installation de l'outil de détourage :
 
+Si pas de GPU (https://ourcodeworld.co/articulos/leer/1610/como-eliminar-el-fondo-de-una-imagen-con-machine-learning-usando-rembg-python-3-en-ubuntu-2004) :
+
+```
+sudo pip install torch==1.7.1+cpu torchvision==0.8.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
+```
+
 ```
 sudo pip install backgroundremover
 ```
