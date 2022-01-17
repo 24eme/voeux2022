@@ -13,7 +13,7 @@ require __DIR__.'/config.inc.php';
         <meta name="mobile-web-app-capable" content="yes">
     </head>
     <body style="margin: 0; padding: 0; overflow-x: hidden;">
-        <div style="position: relative; margin: 0; padding: 0;">
+        <div style="position: relative; margin: 0; padding: 0; overflow: hidden;">
         <video id="camera" style="margin: 0; padding: 0; width: 100%;" autoplay playsinline></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
         <img id="tenue" src="tenue/<?php echo $tenue ?>" style="width: 150%; position: absolute; bottom: 0; left: -25%; margin: 0; padding: 0;" />
