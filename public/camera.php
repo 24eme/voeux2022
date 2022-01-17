@@ -20,10 +20,10 @@ require __DIR__.'/config.inc.php';
         </div>
         <div class="fixed-bottom bg-light p-2" style="z-index: 9999;">
             <div class="container">
+                <div id="block-btn-photo" class="d-grid gap-2">
+                    <button id="take" class="btn btn-primary d-block" type="button">Démarrer</button>
+                </div>
                 <form id="form_camera" action="photo.php?csv=<?php echo $GET['csv'] ?>" method="POST" enctype="multipart/form-data">
-                    <div id="block-btn-photo" class="d-grid gap-2">
-                        <button id="take" class="btn btn-primary d-block" type="button">Démarrer</button>
-                    </div>
                     <div id="block-btn-confirmation" class="d-none row">
                         <div class="d-grid gap-2 col-6">
                             <button id="btn-cancel" class="btn btn-outline-danger" type="button">Recommencer</button>
