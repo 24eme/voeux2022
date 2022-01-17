@@ -58,6 +58,7 @@ video.addEventListener('canplay', function(ev){
 
 video.onplay = (event) => {
   play = true;
+  startbutton.innerText = "Prendre la photo";
 };
 
 
@@ -97,6 +98,7 @@ function takepicture() {
 startbutton.addEventListener('click', function(ev){
   if(!play) {
     video.play();
+    ev.preventDefault();
     return;
   }
   document.getElementById('block-btn-confirmation').classList.remove('d-none');

@@ -22,7 +22,7 @@ require __DIR__.'/config.inc.php';
             <div class="container">
                 <form id="form_camera" action="photo.php?csv=<?php echo $GET['csv'] ?>" method="POST" enctype="multipart/form-data">
                     <div id="block-btn-photo" class="d-grid gap-2">
-                        <button id="take" class="btn btn-primary d-block">Prendre la photo</button>
+                        <button id="take" class="btn btn-primary d-block" type="button">Démarrer</button>
                     </div>
                     <div id="block-btn-confirmation" class="d-none row">
                         <div class="d-grid gap-2 col-6">
