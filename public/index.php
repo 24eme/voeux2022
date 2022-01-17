@@ -2,11 +2,6 @@
 
 require __DIR__.'/config.inc.php'; 
 
-$args = [
-    'csv' => FILTER_SANITIZE_STRING
-];
-$GET = filter_input_array(INPUT_GET, $args);
-
 ?>
 <!doctype html>
 <html lang="fr_FR">
@@ -59,7 +54,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                             <?php foreach($footers as $key => $f): ?><input type="radio" name="footer" class="btn-check" id="btn_footer_<?php echo $key ?>" <?php if($f == $footer): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $f ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image" for="btn_footer_<?php echo $key ?>"><img style="height: 50px;" src="footer/miniature/<?php echo $f ?>" /></label><?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="card mt-2">
+                    <div class="card mt-2 mb-1">
                         <div class="card-header">Disposition</div>
                         <div class="card-body p-1 ">
                             <?php foreach($templates as $key => $t): ?><input type="radio" name="template" class="btn-check" id="btn_template_<?php echo $key ?>" <?php if($t == $template): ?>checked="checked"<?php endif; ?> autocomplete="off" value="<?php echo $t ?>"><label class="btn btn-link btn-sm p-0 m-0 btn-radio-image" for="btn_template_<?php echo $key ?>"><img style="height: 100px;" src="template/miniature/<?php echo str_replace(".svg", ".png", $t) ?>" /></label><?php endforeach; ?>
@@ -68,7 +63,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                 </div>
                 <div class="col-md-5 text-center pt-1">
                     <a name="affiche"></a>
-                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo $GET['csv'] ?>" />
+                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo urlencode($csv) ?>" />
                 </div>
             </div>
         </div>
@@ -80,7 +75,7 @@ $GET = filter_input_array(INPUT_GET, $args);
                             <div class="col-9">
                                 <div class="input-group">
                                     <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i></button>
-                                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" />
+                                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" value="<?php echo $csv ?>" />
                                 </div>
                             </div>
                             <div class="d-grid gap-2 col-3">

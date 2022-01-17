@@ -1,7 +1,6 @@
 <?php
 
-const SCRIPT_DIR = __DIR__.'/../affiche';
-const UPLOAD_DIR = SCRIPT_DIR.'/camera';
+require __DIR__.'/config.inc.php'; 
 
 if($_FILES["camera"]['type'] != 'image/png' || mime_content_type($_FILES["camera"]['tmp_name']) != 'image/png') {
     echo "Ce format de fichier n'est pas autorisé";
@@ -13,6 +12,6 @@ if(!is_writable(UPLOAD_DIR)) {
     exit(1);
 }
 
-move_uploaded_file($_FILES["camera"]["tmp_name"], UPLOAD_DIR."/".$qrcode.".png");
+move_uploaded_file($_FILES["camera"]["tmp_name"], UPLOAD_DIR."/".md5($csv).".png");
 
-header('Location: resultat.php?csv='.$_GET['csv']);
+header('Location: resultat.php?csv='.urlencode($csv));
