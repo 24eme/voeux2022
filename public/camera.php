@@ -12,7 +12,7 @@ require __DIR__.'/config.inc.php';
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <meta name="mobile-web-app-capable" content="yes">
     </head>
-    <body style="margin: 0; padding: 0; overflow-x: hidden;">
+    <body style="margin: 0; padding: 0; overflow-x: hidden; background: #000;">
         <div style="position: relative; margin: 0; padding: 0; overflow: hidden;">
         <video id="camera" style="margin: 0; padding: 0; width: 100%;" autoplay playsinline></video>
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
