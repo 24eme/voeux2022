@@ -80,6 +80,8 @@ function takepicture() {
   photo.setAttribute('src', canvasBuffer.toDataURL('image/png'));
   photo.style.width = video.style.width;
   photo.style.height = video.style.height;
+  document.getElementById('block-btn-confirmation').classList.remove('d-none');
+  document.getElementById('block-btn-photo').classList.add('d-none');
   
   var filename = "camera.png";
   var dataTransfer = new DataTransfer();
@@ -87,8 +89,6 @@ function takepicture() {
         type: 'image/png'
   }));
   document.getElementById('input_camera').files = dataTransfer.files;
-  console.log(document.getElementById('input_camera').files);
-  document.getElementById('form_camera').submit();
 }
 
 startbutton.addEventListener('click', function(ev){

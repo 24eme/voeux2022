@@ -18,13 +18,20 @@ require __DIR__.'/config.inc.php';
         <img id="photo" src="" style="position: absolute; top: 0; left: 0; margin: 0; padding: 0;" />
         <img id="tenue" src="tenue/<?php echo $tenue ?>" style="width: 150%; position: absolute; bottom: 0; left: -25%; margin: 0; padding: 0;" />
         </div>
-        <div id="errorMsg"></div>
-        <div class="fixed-bottom bg-light p-2">
+        <div class="fixed-bottom bg-light p-2" style="z-index: 9999;">
             <div class="container">
-                <div class="d-grid gap-2">
-                    <button id="take" class="btn btn-primary d-block">Prendre la photo</button>
-                </div>
-                <form id="form_camera" action="photo.php?qrcode=<?php echo $qrcode ?>" method="POST" enctype="multipart/form-data">
+                <form id="form_camera" action="photo.php?csv=<?php echo $GET['csv'] ?>" method="POST" enctype="multipart/form-data">
+                    <div id="block-btn-photo" class="d-grid gap-2">
+                        <button id="take" class="btn btn-primary d-block">Prendre la photo</button>
+                    </div>
+                    <div id="block-btn-confirmation" class="d-none row">
+                        <div class="d-grid gap-2 col-6">
+                            <button class="btn btn-outline-danger">Recommencer</a>
+                        </div>
+                        <div class="d-grid gap-2 col-6">
+                            <button class="btn btn-success" type="submit">Confirmer</button>
+                        </div>
+                    </div>
                     <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px; display:none;" type="file" />
                 </form>
             </div>
