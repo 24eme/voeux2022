@@ -10,7 +10,7 @@ footer=$7 #(relatif à la racine du projet)
 tenue=$8 #(relatif à la racine du projet)
 qrcodecontent_ou_tete=$9 #text ou chemin de la photo
 
-output="output/"$$".pdf"
+output="output/"$$""
 
 cd $(dirname $0)/..
 
@@ -43,10 +43,12 @@ echo "s|inkscape:label=\"intérieur tête\" * style=\"display:inline\"|inkscape:
 fi
 cat $template | tr '\n' ' ' | sed -f $output".sed" > $output".svg"
 
-inkscape $output".svg" --export-area-page --batch-process --export-type=pdf --export-filename=$output
+if echo $realoutput | grep pdf > /dev/null ; then
+inkscape $output".svg" --export-area-page --batch-process --export-type=pdf --export-filename=$output".pdf"
+mv $output".pdf" $realoutput
+else
 inkscape $output".svg" --export-area-page --batch-process --export-type=png --export-filename=$output".png"
-
-mv $output $realoutput
-mv $output".png" $realoutput".png"
+mv $output".png" $realoutput
+fi
 
 rm $output".sed" $output".svg" $tetepngresized $tetepng $qrcode
