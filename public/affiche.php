@@ -21,20 +21,17 @@ if($csvId && file_exists(SCRIPT_DIR.'/camera/'.$csvId.'.png')) {
 }
 
 shell_exec(
-    BIN_DIR.'/'.SCRIPT_NAME . ' '
-    . implode(' ', [
-        $fileImage,
-        'template/'.$template,
-        '"'.$title1.'"',
-        '"'.$title2.'"',
-        '"'.$slogan.'"',
-        'fond/'.$fond,
-        'footer/'.$footer,
-        'tenue/'.$tenue,
+    BIN_DIR.'/'.SCRIPT_NAME . ' '.
+        $fileImage.' '.
+        'template/'.$template.' '.
+        '"'.$title1.'" '.
+        '"'.$title2.'" '.
+        '"'.$slogan.'" '.
+        'fond/'.$fond.' '.
+        'footer/'.$footer.' '.
+        'tenue/'.$tenue.' '.
         $tete
-    ])
 );
-
 $fp = fopen($fileImage, 'rb');
 
 header('Content-type: image/png');
