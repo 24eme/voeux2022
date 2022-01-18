@@ -9,6 +9,10 @@ if(!$slogan) {
     $slogan = "Parce que je le mérite vraiment";
 }
 
+if($csvId && $csv) {
+    file_put_contents(DB_DIR."/".$csvId.".csv", $csv);
+}
+
 $fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.png';
 
 $tete = "http://";
