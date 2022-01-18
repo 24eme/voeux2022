@@ -15,9 +15,9 @@ if($csvId && $csv) {
 
 $fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.png';
 
-$tete = "http://";
-if(file_exists(SCRIPT_DIR.'/camera/'.md5($csv).'.png')) {
-    $tete = 'camera/'.md5($csv).'.png';
+$tete = "https://voeux.24eme.fr/2022/q.php?".$csvId;
+if($csvId && file_exists(SCRIPT_DIR.'/camera/'.$csvId.'.png')) {
+    $tete = 'camera/'.$csvId.'.png';
 }
 
 shell_exec(

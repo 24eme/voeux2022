@@ -63,7 +63,7 @@ require __DIR__.'/config.inc.php';
                 </div>
                 <div class="col-md-5 text-center pt-1">
                     <a name="affiche"></a>
-                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="affiche.php?csv=<?php echo urlencode($csv) ?>" />
+                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="" />
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@ require __DIR__.'/config.inc.php';
                             <div class="col-9">
                                 <div class="input-group">
                                     <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i></button>
-                                    <input id="input_csv" type="text" class="form-control opacity-50" name="csv" value="<?php echo $csv ?>" />
+                                    <input id="input_csv" type="text" class="form-control opacity-50" readonly="readonly" name="csv" value="<?php echo $csv ?>" />
                                 </div>
                             </div>
                             <div class="d-grid gap-2 col-3">
@@ -98,6 +98,9 @@ require __DIR__.'/config.inc.php';
             function updateCSV() {
                 document.querySelector('#input_csv').value = document.querySelector('#input_titre_1').value+";"+document.querySelector('#input_titre_2').value+";"+document.querySelector('#input_slogan').value+';'+document.querySelector('input[name=template]:checked').value+';'+document.querySelector('input[name=fond]:checked').value+';'+document.querySelector('input[name=tenue]:checked').value+';'+document.querySelector('input[name=footer]:checked').value
             }
+            function updateAffiche() {
+                document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
+            }
             document.querySelectorAll('#input_titre_1, #input_titre_2, #input_slogan').forEach(function(input) {
                 input.addEventListener('keyup', function(event) {
                     updateCSV();
@@ -106,7 +109,7 @@ require __DIR__.'/config.inc.php';
             document.querySelectorAll('input').forEach(function(input) {
                 input.addEventListener('change', function(event) {
                     updateCSV();
-                    document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
+                    updateAffiche();
                 });
             });
             document.querySelector('#btn_csv_copy').addEventListener('click', function() {
@@ -114,6 +117,7 @@ require __DIR__.'/config.inc.php';
                 document.querySelector('#input_csv').focus();
             })
             updateCSV();
+            updateAffiche();
         </script>
     </body>
 </html>
