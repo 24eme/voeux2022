@@ -67,6 +67,3 @@ if(isset($GET['csv'])) {
 }
 
 $csvId = substr(hash('sha512', $csv), 0, 7);
-if(!$title2) {
-    $csvId = null;
-}

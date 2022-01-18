@@ -91,7 +91,7 @@ require __DIR__.'/config.inc.php';
                     </div>
                     <div class="d-md-none row">
                         <div class="d-grid gap-2 col-6">
-                            <a href="#affiche" class="btn btn-outline-secondary"><small id="btn_image_loader" class="spinner-border spinner-border-sm invisible float-end opacity-25" role="status" aria-hidden="true"></small>Voir l'affiche</a>
+                            <a href="#affiche" class="btn btn-outline-secondary">Voir l'affiche<small id="btn_image_loader" class="spinner-border spinner-border-sm invisible float-end opacity-25" role="status" aria-hidden="true"></small></a>
                         </div>
                         <div class="d-grid gap-2 col-6">
                             <button class="btn btn-primary" type="submit">Continuer</button>

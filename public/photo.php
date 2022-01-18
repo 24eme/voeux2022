@@ -12,6 +12,6 @@ if(!is_writable(UPLOAD_DIR)) {
     exit(1);
 }
 
-move_uploaded_file($_FILES["camera"]["tmp_name"], UPLOAD_DIR."/".md5($csv).".png");
+move_uploaded_file($_FILES["camera"]["tmp_name"], UPLOAD_DIR."/".$csvId.".png");
 
 header('Location: resultat.php?csv='.urlencode($csv));
