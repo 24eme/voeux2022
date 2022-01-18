@@ -31,7 +31,7 @@ $fond = $fonds[array_rand($fonds)];
 $footer = $footers[array_rand($footers)];
 
 $args = [
-    'csv' => FILTER_SANITIZE_ADD_SLASHES
+    'csv' => FILTER_DEFAULT
 ];
 $GET = filter_input_array(INPUT_GET, $args);
 
@@ -39,7 +39,7 @@ $csv = $title1.";".$title2.";".$slogan.";".$template.";".$fond.";".$tenue.";".$f
 
 if(isset($GET['csv'])) {
     $csv = $GET['csv'];
-    $csv = str_replace(array('{', '}', '&', '|', '$', '#'), ' ', $csv);
+    $csv = str_replace(array('{', '}', '&', '|', '$', '#' , '"'), ' ', $csv);
 
     $csvData = str_getcsv($csv, ';');
 
