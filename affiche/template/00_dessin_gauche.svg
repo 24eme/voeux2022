@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="dessin_gauche.svg"
+   sodipodi:docname="00_dessin_gauche.svg"
    inkscape:export-filename="exemples/output.pdf.png"
    inkscape:export-xdpi="60"
    inkscape:export-ydpi="60"
@@ -41,8 +41,8 @@
     <rect
        x="84.470728"
        y="329.02175"
-       width="429.78165"
-       height="392.17202"
+       width="745.07561"
+       height="184.511"
        id="rect44755" />
     <rect
        x="54.014673"
@@ -266,13 +266,13 @@
                id="tspan935">BBBTEMPLATEBBB</tspan></tspan></text>
         <text
            xml:space="preserve"
-           transform="matrix(0.26458333,0,0,0.26458333,25.359359,-26.927243)"
+           transform="matrix(0.26458333,0,0,0.26458333,-15.887269,-25.873582)"
            id="text44753"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:52.92px;font-family:Helvetica;-inkscape-font-specification:'Helvetica, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect44755);fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="957.65906"
            y="0"
            inkscape:label="slogan"><tspan
-             x="89.791494"
+             x="247.43896"
              y="364.03081"
              id="tspan941"><tspan
                style="font-weight:bold;-inkscape-font-specification:'Helvetica Bold';text-align:center;text-anchor:middle"
