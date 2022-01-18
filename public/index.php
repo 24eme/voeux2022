@@ -76,6 +76,7 @@ require __DIR__.'/config.inc.php';
                                 <div class="input-group">
                                     <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i></button>
                                     <input id="input_csv" type="text" class="form-control opacity-50" readonly="readonly" name="csv" value="<?php echo $csv ?>" />
+                                    <button id="btn_csv_edit" class="btn btn-outline-secondary" type="button"><i class="bi bi-pencil"></i></button>
                                 </div>
                             </div>
                             <div class="d-grid gap-2 col-3">
@@ -113,9 +114,15 @@ require __DIR__.'/config.inc.php';
                 });
             });
             document.querySelector('#btn_csv_copy').addEventListener('click', function() {
+                document.querySelector('#input_csv').focus()
                 navigator.clipboard.writeText(document.querySelector('#input_csv').value);
-                document.querySelector('#input_csv').focus();
+                document.querySelector('#btn_csv_copy').focus();
             })
+            document.querySelector('#btn_csv_edit').addEventListener('click', function() {
+                document.querySelector('#input_csv').value = prompt("CSV", document.querySelector('#input_csv').value);
+                updateAffiche();
+            })
+            
             updateCSV();
             updateAffiche();
         </script>
