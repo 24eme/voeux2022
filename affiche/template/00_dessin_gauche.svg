@@ -94,15 +94,15 @@
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
-       id="filter112746"
-       x="-0.0078347846"
-       y="-0.0055803311"
-       width="1.0156696"
-       height="1.0111607">
+       id="filter953"
+       x="-0.003445951"
+       y="-0.0024543812"
+       width="1.0068919"
+       height="1.0049088">
       <feGaussianBlur
          inkscape:collect="always"
-         stdDeviation="0.69098446"
-         id="feGaussianBlur112748" />
+         stdDeviation="0.30391374"
+         id="feGaussianBlur955" />
     </filter>
   </defs>
   <g
@@ -117,7 +117,7 @@
          id="g1108"
          inkscape:label="fond"
          transform="matrix(-1.0235305,0,0,0.99833843,142.38088,-35.723112)"
-         style="display:inline;filter:url(#filter112746)">
+         style="display:inline;filter:url(#filter953)">
         <image
            width="211.66667"
            height="297.17999"
