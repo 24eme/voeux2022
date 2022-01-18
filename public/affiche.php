@@ -9,11 +9,15 @@ if(!$slogan) {
     $slogan = "Parce que je le mérite vraiment";
 }
 
+if($csvId && $csv) {
+    file_put_contents(DB_DIR."/".$csvId.".csv", $csv);
+}
+
 $fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.png';
 
-$tete = "http://";
-if(file_exists(SCRIPT_DIR.'/camera/'.md5($csv).'.png')) {
-    $tete = 'camera/'.md5($csv).'.png';
+$tete = "https://voeux.24eme.fr/2022/q.php?".$csvId;
+if($csvId && file_exists(SCRIPT_DIR.'/camera/'.$csvId.'.png')) {
+    $tete = 'camera/'.$csvId.'.png';
 }
 
 shell_exec(
