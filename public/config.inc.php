@@ -30,12 +30,14 @@ $fond = $fonds[array_rand($fonds)];
 $footer = $footers[array_rand($footers)];
 
 $args = [
-    'csv' => FILTER_SANITIZE_STRING
+    'csv' => FILTER_SANITIZE_ADD_SLASHES
 ];
 $GET = filter_input_array(INPUT_GET, $args);
 
 if(isset($GET['csv'])) {
     $csv = $GET['csv'];
+    $csv = str_replace(array('{', '}', '&', '|', '$', '#'), ' ', $csv);
+
     $csvData = str_getcsv($csv, ';');
 
     if(isset($csvData[0]) && $csvData[0]) {
