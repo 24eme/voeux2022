@@ -61,9 +61,14 @@ require __DIR__.'/config.inc.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 text-center pt-1">
+                <div class="col-md-5 text-center pt-1 position-relative">
+                    <div class="sticky-md-top">
                     <a name="affiche"></a>
-                    <img id="image_affiche" class="img-thumbnail sticky-md-top" src="" />
+                    <div id="image_loader" class="spinner-border text-dark position-absolute start-50 opacity-50" style="position: absolute; z-index: 999; top: 30px;" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <img id="image_affiche" class="img-thumbnail" src="" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,7 +91,7 @@ require __DIR__.'/config.inc.php';
                     </div>
                     <div class="d-md-none row">
                         <div class="d-grid gap-2 col-6">
-                            <a href="#affiche" class="btn btn-outline-secondary">Voir l'affiche</a>
+                            <a href="#affiche" class="btn btn-outline-secondary"><small id="btn_image_loader" class="spinner-border spinner-border-sm invisible float-end opacity-25" role="status" aria-hidden="true"></small>Voir l'affiche</a>
                         </div>
                         <div class="d-grid gap-2 col-6">
                             <button class="btn btn-primary" type="submit">Continuer</button>
@@ -101,7 +106,11 @@ require __DIR__.'/config.inc.php';
             }
             function updateAffiche() {
                 document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
+                document.querySelector('#image_loader').classList.remove('d-none');
+                document.querySelector('#btn_image_loader').classList.remove('invisible');
+                document.querySelector('#image_affiche').classList.add('opacity-50');
             }
+            
             document.querySelectorAll('#input_titre_1, #input_titre_2, #input_slogan').forEach(function(input) {
                 input.addEventListener('keyup', function(event) {
                     updateCSV();
@@ -119,9 +128,18 @@ require __DIR__.'/config.inc.php';
                 document.querySelector('#btn_csv_copy').focus();
             })
             document.querySelector('#btn_csv_edit').addEventListener('click', function() {
-                document.querySelector('#input_csv').value = prompt("CSV", document.querySelector('#input_csv').value);
+                let csv = prompt("CSV", document.querySelector('#input_csv').value);
+                if(!csv) {
+                    return;
+                }
+                document.querySelector('#input_csv').value = csv;
                 updateAffiche();
             })
+            document.querySelector('#image_affiche').addEventListener('load', function() {
+                document.querySelector('#image_loader').classList.add('d-none');
+                document.querySelector('#btn_image_loader').classList.add('invisible');
+                document.querySelector('#image_affiche').classList.remove('opacity-50');
+            });
             
             updateCSV();
             updateAffiche();
