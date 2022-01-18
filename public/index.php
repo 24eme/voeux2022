@@ -132,8 +132,7 @@ require __DIR__.'/config.inc.php';
                 if(!csv) {
                     return;
                 }
-                document.querySelector('#input_csv').value = csv;
-                updateAffiche();
+                document.location.href = '?csv='+encodeURI(csv);
             })
             document.querySelector('#image_affiche').addEventListener('load', function() {
                 document.querySelector('#image_loader').classList.add('d-none');
