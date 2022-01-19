@@ -13,7 +13,13 @@ if($csvId && $csv) {
     file_put_contents(DB_DIR."/".$csvId.".csv", $csv);
 }
 
-$fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.png';
+$format = "png";
+
+if(isset($_GET['format']) && $_GET['format'] == "pdf") {
+	$format = "pdf";
+}
+
+$fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.'.$format;
 
 $tete = "https://voeux.24eme.fr/2022/q.php?".$csvId;
 if($csvId && file_exists(SCRIPT_DIR.'/camera/'.$csvId.'.png')) {
@@ -34,7 +40,12 @@ shell_exec(
 );
 $fp = fopen($fileImage, 'rb');
 
-header('Content-type: image/png');
+if($format == 'png') {
+	header('Content-type: image/png');
+}
+if($format == 'pdf') {
+	header('Content-type: application/pdf');
+}
 header('Content-size: '.filesize($fileImage));
 
 fpassthru($fp);
