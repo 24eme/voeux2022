@@ -80,7 +80,7 @@ require __DIR__.'/config.inc.php';
                             <div class="col-9 a-center">
                                 <div class="input-group">
                                     <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i> Copier le CSV</button>
-                                    <button id="btn_csv_edit" class="btn btn-outline-secondary" type="button"><i class="bi bi-pencil"></i> CSV</button>
+                                    <button id="btn_csv_edit" class="btn btn-outline-secondary" type="button"><i class="bi bi-pencil"></i> Modifier le CSV</button>
                                     <input id="input_csv" type="text" class="form-control opacity-50 d-none" readonly="readonly" name="csv" value="<?php echo $csv ?>" />
                                     <a id="btn-lien" class="btn btn-outline-secondary" href=""><i class="bi bi-link"></i> Lien</a>
                                     <a id="btn-image" class="btn btn-outline-secondary" href=""><i class="bi bi-card-image"></i> Image</a>
