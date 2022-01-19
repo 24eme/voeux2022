@@ -77,11 +77,14 @@ require __DIR__.'/config.inc.php';
                 <form action="camera.php" method="GET">
                     <div class="d-none d-md-block">
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-9 a-center">
                                 <div class="input-group">
-                                    <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i></button>
-                                    <input id="input_csv" type="text" class="form-control opacity-50" readonly="readonly" name="csv" value="<?php echo $csv ?>" />
-                                    <button id="btn_csv_edit" class="btn btn-outline-secondary" type="button"><i class="bi bi-pencil"></i></button>
+                                    <button id="btn_csv_copy" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i> Copier le CSV</button>
+                                    <button id="btn_csv_edit" class="btn btn-outline-secondary" type="button"><i class="bi bi-pencil"></i> CSV</button>
+                                    <input id="input_csv" type="text" class="form-control opacity-50 d-none" readonly="readonly" name="csv" value="<?php echo $csv ?>" />
+                                    <a id="btn-lien" class="btn btn-outline-secondary" href=""><i class="bi bi-link"></i> Lien</a>
+                                    <a id="btn-image" class="btn btn-outline-secondary" href=""><i class="bi bi-card-image"></i> Image</a>
+                                    <a id="btn-pdf" class="btn btn-outline-secondary" href=""><i class="bi bi-file-richtext"></i> PDF</a>
                                 </div>
                             </div>
                             <div class="d-grid gap-2 col-3">
@@ -106,6 +109,9 @@ require __DIR__.'/config.inc.php';
             }
             function updateAffiche() {
                 document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
+                document.querySelector('#btn-lien').href = "?csv="+encodeURI(document.querySelector('#input_csv').value);
+                document.querySelector('#btn-image').href = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
+                document.querySelector('#btn-pdf').href = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value)+'&format=pdf';
                 document.querySelector('#image_loader').classList.remove('d-none');
                 document.querySelector('#btn_image_loader').classList.remove('invisible');
                 document.querySelector('#image_affiche').classList.add('opacity-50');
