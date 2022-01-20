@@ -12,6 +12,8 @@ if(!is_writable(UPLOAD_DIR)) {
     exit(1);
 }
 
-move_uploaded_file($_FILES["camera"]["tmp_name"], UPLOAD_DIR."/".$csvId.".png");
+$number = sprintf("%03d", getLastPhotoFileNumber($csvId) + 1);
 
-header('Location: resultat.php?csv='.urlencode($csv));
+move_uploaded_file($_FILES["camera"]["tmp_name"], UPLOAD_DIR."/".$csvId."_".$number.".png");
+
+header('Location: resultat.php?csv='.urlencode($csv).'&numero='.$number);

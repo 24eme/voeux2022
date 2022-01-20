@@ -14,4 +14,9 @@ if(!file_exists(DB_DIR."/".$_SERVER['QUERY_STRING'].".csv")) {
 
 $csv = file_get_contents(DB_DIR."/".$_SERVER['QUERY_STRING'].".csv");
 
+if(getLastPhotoFile($_SERVER['QUERY_STRING'])) {
+    header('Location: affiche.php?csv='.urlencode($csv));
+    exit;
+}
+
 header('Location: camera.php?csv='.urlencode($csv));

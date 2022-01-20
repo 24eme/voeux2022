@@ -15,6 +15,25 @@ function filter_image($v) {
     return strpos($v, ".svg") !== false || strpos($v, ".png") !== false || strpos($v, ".jpg") !== false; 
 }
 
+function getLastPhotoFile($csvId) {
+    foreach(scandir(UPLOAD_DIR, SCANDIR_SORT_DESCENDING) as $photoFile) {
+        if(strpos($photoFile, $csvId) !== false) {
+
+            return $photoFile;
+        }
+    } 
+    
+    return null;
+}
+
+function getLastPhotoFileNumber($csvId) {
+    $lastPhotoFile = getLastPhotoFile($csvId);
+    $lastPhotoFile = preg_replace("/\.png$/", "", $lastPhotoFile);
+    $number = preg_replace("/^[^_]+_?/", "", $lastPhotoFile);
+
+    return $number * 1;
+}
+
 $templates = array_filter(scandir(SCRIPT_DIR."/template"), function($v) { return filter_image($v); });
 $tenues = array_filter(scandir(SCRIPT_DIR."/tenue"), function($v) { return filter_image($v); });
 $fonds = array_filter(scandir(SCRIPT_DIR."/fond"), function($v) { return filter_image($v); });
