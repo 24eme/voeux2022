@@ -42,6 +42,7 @@ echo "s|qrcode/template_qrcode.png|"$qrcode"|" >> $output".sed"
 else
 echo "s|inkscape:label=\"intérieur tête\" * style=\"display:inline\"|inkscape:label=\"intérieur tête\" style=\"display:none\"|" >> $output".sed"
 fi
+echo "s|@@|\n|g" >> $output".sed"
 cat $template | tr '\n' ' ' | sed -f $output".sed" > $output".svg"
 
 if echo $realoutput | grep pdf > /dev/null ; then
