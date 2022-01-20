@@ -28,7 +28,10 @@ navigator.mediaDevices.getUserMedia(constraints)
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
   video.onloadedmetadata = function (e) {
-    video.play()
+    video.play();
+    document.body.classList.add('bg-dark');
+    document.querySelector('#block_presentation').classList.add('d-none');
+    document.querySelector('#block_camera').classList.remove('d-none');
   }
 })
 .catch(function(error) {
