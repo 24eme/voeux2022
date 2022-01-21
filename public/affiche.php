@@ -55,7 +55,7 @@ if($format == 'png') {
 if($format == 'pdf') {
 	header('Content-type: application/pdf');
     $name = strtolower(date("YmdHis").'_'.$title1.'_'.$title2);
-    $name = preg_replace('/[^a-z0-9]/', '', $name);
+    $name = preg_replace('/[^a-z0-9_]/', '', $name);
     header('Content-Disposition: attachment; filename="'.$name.'.pdf"');
 }
 header('Content-size: '.filesize($fileImage));
