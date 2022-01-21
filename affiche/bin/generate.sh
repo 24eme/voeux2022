@@ -50,9 +50,8 @@ echo "s|@@|\n|g" >> $output".sed"
 cat $template | tr '\n' ' ' | sed -f $output".sed" > $output".svg"
 
 if echo $realoutput | grep pdf > /dev/null ; then
-inkscape $output".svg" --export-area-page --batch-process --export-type=pdf --export-filename=$output".pdf"
-gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$realoutput $output".pdf"
-rm $output".pdf"
+inkscape $output".svg" --export-area-page --batch-process -d 300 --export-type=pdf --export-filename=$output".pdf"
+mv $output".pdf" $realoutput
 else
 inkscape $output".svg" --export-area-page --batch-process --export-type=png --export-filename=$output".png"
 mv $output".png" $realoutput
