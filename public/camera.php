@@ -17,7 +17,7 @@ require __DIR__.'/config.inc.php';
             <div class="row">
                 <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 pt-4 pb-4">
                     <h2>Pour finaliser votre affiche</h2>
-                    <p class="lead pt-4">Une photo</p>
+                    <p class="lead pt-4">Nous avons besoin d'une petite photo !</p>
                     <div class="d-grid gap-2 mt-4">
                         <button id="btn-start" class="btn btn-primary d-block" type="button">Démarrer l'appareil photo</button>
                     </div>
