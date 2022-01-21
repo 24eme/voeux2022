@@ -16,10 +16,14 @@ cd $(dirname $0)/..
 
 if test -f "$qrcodecontent_ou_tete"; then
     tete=$qrcodecontent_ou_tete
+    teteresized=$output"_resized_tete.png"
+    teteresizedpng=$output"_resized_bgr_tete.png"
     tetepng=$output"_tete.png"
     tetepngresized=$output"_teteresized.png"
     mkdir -p /tmp/backgroundremover4affiche"."$USER
-    HOME=/tmp/backgroundremover4affiche"."$USER backgroundremover -a -ae 5 -i $tete -o $tetepng
+    convert $tete -resize 100x133 $teteresized
+    HOME=/tmp/backgroundremover4affiche"."$USER backgroundremover -a -ae 5 -i $teteresized -o $teteresizedpng
+    convert $teteresizedpng -resize 1800x2400 $tetepng
     convert $tetepng -background 'rgba(0,0,0,0)' -gravity south -extent 1800x2400 -channel a tete/template_tete_transparency.png  -compose multiply -composite $tetepngresized
 else
     qrcodetxt=$qrcodecontent_ou_tete
@@ -47,7 +51,8 @@ cat $template | tr '\n' ' ' | sed -f $output".sed" > $output".svg"
 
 if echo $realoutput | grep pdf > /dev/null ; then
 inkscape $output".svg" --export-area-page --batch-process --export-type=pdf --export-filename=$output".pdf"
-mv $output".pdf" $realoutput
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$realoutput $output".pdf"
+rm $output".pdf"
 else
 inkscape $output".svg" --export-area-page --batch-process --export-type=png --export-filename=$output".png"
 mv $output".png" $realoutput
