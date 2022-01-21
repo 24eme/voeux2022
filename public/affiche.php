@@ -22,8 +22,17 @@ if(isset($_GET['format']) && $_GET['format'] == "pdf") {
 $fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.'.$format;
 
 $tete = "https://voeux.24eme.fr/2022/q.php?".$csvId;
-if($csvId && file_exists(SCRIPT_DIR.'/camera/'.$csvId.'.png')) {
-    $tete = 'camera/'.$csvId.'.png';
+
+if(isset($_GET['numero']) && $_GET['numero']*1 > 0) {
+    $photoFileNumber = $_GET['numero']*1;
+} else {
+    $photoFileNumber = getLastPhotoFileNumber($csvId);
+}
+
+$cameraFile = $csvId.'_'.sprintf("%03d", $photoFileNumber).'.png';
+
+if(file_exists(UPLOAD_DIR.'/'.$cameraFile)) {
+    $tete = UPLOAD_DIR.'/'.$cameraFile;
 }
 
 shell_exec(
