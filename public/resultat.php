@@ -29,7 +29,7 @@ require __DIR__.'/config.inc.php';
                             <a id="btn-pdf" class="btn btn-outline-secondary" href="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php isset($_GET['numero']) ? $_GET['numero'] : 0 ?>&format=pdf"><i class="bi bi-file-richtext"></i> PDF</a>
                         </div>
                     </div>
-                    <div class="d-grid gap-2 col-md-6 col-sm-12 pb-2 pt-md-2">
+                    <div id="block_partager" class="d-grid gap-2 col-md-6 col-sm-12 pb-2 pt-md-2 d-none">
                         <button id="btn_partager" class="btn btn-outline-primary" type="button">Partager</button>
                     </div>
                     <div class="d-grid gap-2 col-md-6 col-sm-12 pb-2 pt-md-2">
@@ -39,6 +39,9 @@ require __DIR__.'/config.inc.php';
             </div>
         </div>
         <script>
+        if(navigator.share) {
+            document.querySelector('#block_partager').classList.remove('dt-none');
+        }
         document.querySelector('#btn-lien').addEventListener('click', function(event) {
             navigator.clipboard.writeText(this.href);
             event.preventDefault();
