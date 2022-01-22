@@ -46,7 +46,7 @@ require __DIR__.'/config.inc.php';
         document.querySelector('#btn-lien').addEventListener('click', function(event) {
             navigator.clipboard.writeText(this.href);
             event.preventDefault();
-            alert('Lien copié dans le presse papier');
+            alert('Lien a été copié dans le presse papier');
             return false;
         })
         document.querySelector('#btn_partager').addEventListener('click', function(event) {
