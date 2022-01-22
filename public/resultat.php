@@ -41,6 +41,7 @@ require __DIR__.'/config.inc.php';
         <script>
         if(navigator.share) {
             document.querySelector('#block_partager').classList.remove('dt-none');
+            document.querySelector('#block_group_telecharger').classList.add('dt-none');
         }
         document.querySelector('#btn-lien').addEventListener('click', function(event) {
             navigator.clipboard.writeText(this.href);
