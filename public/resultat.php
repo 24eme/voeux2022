@@ -30,6 +30,9 @@ require __DIR__.'/config.inc.php';
                         </div>
                     </div>
                     <div class="d-grid gap-2 col-md-6 col-sm-12 pb-2 pt-md-2">
+                        <button id="btn_partager" class="btn btn-outline-primary" type="button">Partager</button>
+                    </div>
+                    <div class="d-grid gap-2 col-md-6 col-sm-12 pb-2 pt-md-2">
                         <a class="btn btn-primary" href="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>&format=pdf">Télécharger</a>
                     </div>
                 </div>
@@ -42,6 +45,13 @@ require __DIR__.'/config.inc.php';
             alert('Lien copié dans le presse papier');
             return false;
         })
+        document.querySelector('#btn_partager').addEventListener('click', function(event) {
+            navigator.share({
+                url: 'affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>',
+                title: '',
+                text: '',
+            })
+        });
         </script>
     </body>
 </html>
