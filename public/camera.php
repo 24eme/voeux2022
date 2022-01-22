@@ -47,12 +47,24 @@ require __DIR__.'/config.inc.php';
                                 <button id="btn-cancel" class="btn btn-outline-danger" type="button">Recommencer</button>
                             </div>
                             <div class="d-grid gap-2 col-6">
-                                <button class="btn btn-success" type="submit">Confirmer</button>
+                                <button id="camera_confirm" class="btn btn-success" type="submit">Confirmer</button>
                             </div>
                         </div>
                         <input id="input_camera" name="camera" style="width: 100%; margin: 0; padding: 0; position: fixed; bottom: 20px; display:none;" type="file" />
                     </form>
                 </div>
+            </div>
+        </div>
+        <div id="block_uploading" class="d-none">
+            <div class="row">
+            <div class="col-12">
+            <h1 class="text-center"><img src="https://www.24eme.fr/img/24eme.svg" width=75 height=75/></h1>
+            </div>
+            </div>
+            <div class="row">
+            <div class="text-center mt-4 pt-4">
+                <p id="resultat_loader_msg"></p>
+            </div>
             </div>
         </div>
         <script type="text/javascript">
@@ -145,6 +157,16 @@ require __DIR__.'/config.inc.php';
                 document.getElementById('input_camera').files = dataTransfer.files;
                 document.getElementById('block-btn-confirmation').classList.remove('d-none');
                 document.getElementById('block-loading').classList.add('d-none');
+            }
+            msg_i = 0;
+            msg_txt = ["Préparation de la photo<br/>pour être transmise", "Sélection de la meilleure<br/>définition de la photo", "La photo est<br/>en cours d'envoi", "L'équipe de communication est en train<br/>de connecter le modem", "La photo est<br/>en cours de reception", "L'équipe de communication<br/>doit relever ses mails"];
+            document.getElementById('form_camera').addEventListener('submit', switchUploading);
+            function switchUploading() {
+                setInterval(function(){msg_i++;msg_points="";for(i=0;i<msg_i % 4;i++){msg_points += '.';} document.querySelector('#resultat_loader_msg').innerHTML = msg_txt[Math.floor(msg_i / 8) % (msg_txt.length)]+msg_points;}, 1000);
+                document.getElementById('block_camera').classList.add('d-none');
+                document.getElementById('block_uploading').classList.remove('d-none');
+                document.getElementsByTagName('body')[0].classList.remove('bg-dark')
+                document.getElementsByTagName('body')[0].classList.add('bg-light')
             }
         </script>
     </body>    
