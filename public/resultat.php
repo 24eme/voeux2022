@@ -20,8 +20,8 @@ require __DIR__.'/config.inc.php';
                 </div>
                 </div>
                 <div class="row">
-                <div class="text-center">
-                    <p id="resultat_loader_msg">Affiche en cours de conception</p>
+                <div class="text-center mt-4 pt-4">
+                    <p id="resultat_loader_msg"></p>
                 </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@ require __DIR__.'/config.inc.php';
         </div>
         <script>
         msg_i = 0;
-        msg_txt = ["Affiche en cours de conception", "L'équipe de communication cherche la meilleure stratégie", "L'équipe de campagne initie l'appel d'offre", "Un imprimeur est en passe d'être trouvé", "L'affiche va être livrée sous peu", "Un primaire va être lancé pour choisir votre affiche"];
+        msg_txt = ["Affiche en cours<br/>de conception", "L'équipe de communication cherche<br/>la meilleure stratégie", "L'équipe de campagne initie<br/>l'appel d'offre", "Un imprimeur est en passe<br/>d'être trouvé", "L'affiche va être<br/>livrée sous peu", "Un primaire va être lancé<br/>pour choisir votre affiche"];
         setInterval(function(){msg_i++;msg_points="";for(i=0;i<msg_i % 4;i++){msg_points += '.';} document.querySelector('#resultat_loader_msg').innerHTML = msg_txt[Math.floor(msg_i / 8) % (msg_txt.length)]+msg_points;}, 1000);
         document.querySelector('#image_affiche').addEventListener('load', function(event) {
             document.querySelector('#resultat_affiche').classList.remove('d-none');
