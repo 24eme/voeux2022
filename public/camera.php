@@ -15,10 +15,11 @@ require __DIR__.'/config.inc.php';
     <body style="margin: 0; padding: 0; overflow-x: hidden;">
         <div id="block_presentation" class="container text-center">
             <div class="row">
-                <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 pt-4 pb-4">
-                    <h2>Pour finaliser votre affiche</h2>
-                    <p class="lead pt-4">Nous avons besoin d'une petite photo !</p>
-                    <div class="d-grid gap-2 mt-4">
+                <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 p-4 text-center">
+                    <h1 class="m-4"><img src="https://www.24eme.fr/img/24eme.svg" width=125 height=125/></h1>
+                    <h2>Pour finaliser<br/>votre affiche</h2>
+                    <p class="lead p-4 m-4">Nous avons besoin<br/>d'une petite photo !</p>
+                    <div class="d-grid gap-2 m-4">
                         <button id="btn-start" class="btn btn-primary d-block" type="button">Démarrer l'appareil photo</button>
                     </div>
                 </div>
