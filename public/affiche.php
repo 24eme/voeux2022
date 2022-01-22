@@ -19,8 +19,6 @@ if(isset($_GET['format']) && $_GET['format'] == "pdf") {
 	$format = "pdf";
 }
 
-$fileImage = tempnam(sys_get_temp_dir(), 'voeux2022').'.'.$format;
-
 $tete = "https://voeux.24eme.fr/2022/q.php?".$csvId;
 
 if(isset($_GET['numero']) && $_GET['numero']*1 > 0) {
@@ -32,10 +30,14 @@ if(isset($_GET['numero']) && $_GET['numero']*1 > 0) {
 $cameraFile = $csvId.'_'.sprintf("%03d", $photoFileNumber).'.png';
 
 if(file_exists(UPLOAD_DIR.'/'.$cameraFile)) {
+    $fileImage = UPLOAD_DIR.'/'.$csvId.'_'.sprintf("%03d", $photoFileNumber).'_affiche_final.'.$format;
     $tete = UPLOAD_DIR.'/'.$cameraFile;
+}else{
+    $fileImage = UPLOAD_DIR.'/'.$csvId.'_'.sprintf("%03d", $photoFileNumber).'_affiche_qrcode.'.$format;
 }
 
-shell_exec(
+if(!file_exists($fileImage)) {
+  shell_exec(
     BIN_DIR.'/'.SCRIPT_NAME . ' '.
         $fileImage.' '.
         'template/'.$template.' '.
@@ -46,7 +48,9 @@ shell_exec(
         'footer/'.$footer.' '.
         'tenue/'.$tenue.' '.
         $tete
-);
+  );
+}
+
 $fp = fopen($fileImage, 'rb');
 
 if($format == 'png') {
@@ -61,6 +65,3 @@ if($format == 'pdf') {
 header('Content-size: '.filesize($fileImage));
 
 fpassthru($fp);
-
-unlink($fileImage);
-unlink(str_replace(".png", "", $fileImage));
