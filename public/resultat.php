@@ -29,7 +29,7 @@ require __DIR__.'/config.inc.php';
                 <div class="col-12">
                 <h1 class="text-center"><img src="https://www.24eme.fr/img/24eme.svg" width=75 height=75/></h1>
                 </div>
-                <div class="col-12"><img id="image_affiche" class="img-thumbnail" src="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" /></div>
+                <div class="col-12 text-center"><img id="image_affiche" class="img-thumbnail" src="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" /></div>
                 <div class="col-12">
                     <div class="row p-4">
                         <a id="btn_camera" class="col-3 btn btn-default" href="camera.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>">       «&nbsp;<i class="bi bi-camera-fill"></i></a>
