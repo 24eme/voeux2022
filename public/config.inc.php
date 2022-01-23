@@ -11,7 +11,7 @@ function filter_image($v) {
         
         return false;
     } 
-    if (strpos($photoFile, '_affiche_') !== false) {
+    if (strpos($v, '_affiche_') !== false) {
         
         return false;
     }
