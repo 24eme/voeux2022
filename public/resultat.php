@@ -8,6 +8,9 @@ require __DIR__.'/config.inc.php';
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Voeux 2022 du 24ème</title>
+        <meta property="og:site_name" content="Voeux 2022 du 24ème">
+        <meta content="article" property="og:type">
         <meta content="resultat.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" property="og:url">
         <meta content="<?php echo str_replace('"', '\"', $title1." ".$title2) ?>" property="og:title">
         <meta content="<?php echo str_replace('"', '\"', $slogan) ?>" property="og:description">
