@@ -11,6 +11,10 @@ function filter_image($v) {
         
         return false;
     } 
+    if (strpos($photoFile, '_affiche_') !== false) {
+        
+        return false;
+    }
     
     return strpos($v, ".svg") !== false || strpos($v, ".png") !== false || strpos($v, ".jpg") !== false; 
 }
