@@ -21,9 +21,7 @@ if test -f "$qrcodecontent_ou_tete"; then
     tetepng=$output"_tete.png"
     tetepngresized=$output"_teteresized.png"
     mkdir -p /tmp/backgroundremover4affiche"."$USER
-    convert $tete -resize 100x133 $teteresized
-    HOME=/tmp/backgroundremover4affiche"."$USER backgroundremover -a -ae 5 -i $teteresized -o $teteresizedpng
-    convert $teteresizedpng -resize 1800x2400 $tetepng
+    HOME=/tmp/backgroundremover4affiche"."$USER backgroundremover -a -ae 5 -i $tete -o $tetepng
     convert $tetepng -background 'rgba(0,0,0,0)' -gravity south -extent 1800x2400 -channel a tete/template_tete_transparency.png  -compose multiply -composite $tetepngresized
 else
     qrcodetxt=$qrcodecontent_ou_tete
