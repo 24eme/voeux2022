@@ -8,6 +8,13 @@ require __DIR__.'/config.inc.php';
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Voeux 2022 du 24ème</title>
+        <meta property="og:site_name" content="Voeux 2022 du 24ème">
+        <meta content="article" property="og:type">
+        <meta content="resultat.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" property="og:url">
+        <meta content="<?php echo str_replace('"', '\"', $title1." ".$title2) ?>" property="og:title">
+        <meta content="<?php echo str_replace('"', '\"', $slogan) ?>" property="og:description">
+        <meta content="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" property="og:image">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     </head>
@@ -29,12 +36,12 @@ require __DIR__.'/config.inc.php';
                 <div class="col-12">
                 <h1 class="text-center"><img src="https://www.24eme.fr/img/24eme.svg" width=75 height=75/></h1>
                 </div>
-                <div class="col-12 text-center"><img id="image_affiche" class="img-thumbnail" src="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" /></div>
+                <div class="col-12 text-center"><img id="image_affiche" class="img-thumbnail" src="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>" /></div>
                 <div class="col-12">
                     <div class="row p-4">
                         <a id="btn_camera" class="col-3 btn btn-default" href="camera.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>">       «&nbsp;<i class="bi bi-camera-fill"></i></a>
-                        <a class="col-6 btn btn-primary" href="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php isset($_GET['numero']) ? $_GET['numero'] : 0 ?>&format=pdf">Télécharger l'affiche</a>
-                        <a id="btn_partager" class="col-3 btn btn-default" href="resultat.php?csv=<?php echo urlencode($csv) ?>&numero=<?php isset($_GET['numero']) ? $_GET['numero'] : 0 ?>">          <i class="bi bi-share"></i></a>
+                        <a class="col-6 btn btn-primary" href="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>&format=pdf">Télécharger l'affiche</a>
+                        <a id="btn_partager" class="col-3 btn btn-default" href="resultat.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo isset($_GET['numero']) ? $_GET['numero'] : 0 ?>">          <i class="bi bi-share"></i></a>
                     </div>
                 </div>
             </div>
@@ -50,14 +57,12 @@ require __DIR__.'/config.inc.php';
         document.querySelector('#btn_partager').addEventListener('click', function(event) {
           try {
             navigator.share(datashare = {
-                url: this.href,
-                title: '',
-                text: '',
+                url: this.href
             });
         }catch(e) {
             navigator.clipboard.writeText(this.href);
             event.preventDefault();
-            alert('Lien a été copié dans le presse papier');            
+            alert('Le lien pour partager cette page a été copié dans le presse papier');
         }
         return false;
         });
