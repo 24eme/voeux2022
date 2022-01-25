@@ -71,7 +71,7 @@ $numero = sprintf("%03d", $numero);
             });
         }catch(e) {
             navigator.clipboard.writeText(this.href);
-            alert('Le lien pour partager cette affiche a été copié dans le presse papier');
+            alert('✔ Le lien pour partager cette affiche a été copié dans le presse papier');
         }
         return false;
         });
