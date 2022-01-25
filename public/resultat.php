@@ -15,7 +15,6 @@ $numero = sprintf("%03d", $numero);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Voeux 2022 du 24ème</title>
         <meta property="og:site_name" content="Voeux 2022 du 24ème">
-        <meta content="article" property="og:type">
         <meta content="resultat.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo $numero ?>" property="og:url">
         <meta content="<?php echo str_replace('"', '\"', $title1." ".$title2) ?>" property="og:title">
         <meta content="<?php echo str_replace('"', '\"', $slogan) ?>" property="og:description">
@@ -41,7 +40,7 @@ $numero = sprintf("%03d", $numero);
                 <div class="col-12">
                 <h1 class="text-center"><img src="https://www.24eme.fr/img/24eme.svg" width=75 height=75/></h1>
                 </div>
-                <div class="col-12 text-center"><img id="image_affiche" class="img-thumbnail" src="affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo $numero ?>" /></div>
+                <div class="col-12 text-center"><img id="image_affiche" class="img-thumbnail" src="" /></div>
                 <div class="col-12">
                     <div class="row p-4">
                         <a id="btn_camera" class="col-3 btn btn-default" href="camera.php?csv=<?php echo urlencode($csv) ?>">       «&nbsp;<i class="bi bi-camera-fill"></i></a>
@@ -55,6 +54,8 @@ $numero = sprintf("%03d", $numero);
         msg_i = 0;
         msg_txt = ["Affiche en cours<br/>de conception", "L'équipe de communication cherche<br/>la meilleure stratégie", "L'équipe de campagne initie<br/>l'appel d'offre", "Un imprimeur est en passe<br/>d'être trouvé", "L'affiche va être<br/>livrée sous peu", "Une primaire va être lancé<br/>pour choisir votre affiche"];
         var timerLoader = setInterval(function(){msg_i++;msg_points="";for(i=0;i<msg_i % 4;i++){msg_points += '.';} document.querySelector('#resultat_loader_msg').innerHTML = msg_txt[Math.floor(msg_i / 8) % (msg_txt.length)]+msg_points;}, 1000);
+        var urlImage = document.querySelector('#image_affiche').src;
+        document.querySelector('#image_affiche').src = "affiche.php?csv=<?php echo urlencode($csv) ?>&numero=<?php echo $numero ?>";
         document.querySelector('#image_affiche').addEventListener('load', function(event) {
             clearInterval(timerLoader);
             document.querySelector('#resultat_affiche').classList.remove('d-none');
