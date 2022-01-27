@@ -20,6 +20,9 @@ if(isset($_GET['format']) && $_GET['format'] == "pdf") {
 }
 
 $tete = "https://voeux.24eme.fr/2022/q.php?".$csvId;
+if (@$_GET['public']) {
+	$tete .= "&public=true";
+}
 
 if(isset($_GET['numero']) && $_GET['numero']*1 > 0) {
     $photoFileNumber = $_GET['numero']*1;

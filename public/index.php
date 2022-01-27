@@ -109,7 +109,7 @@ require __DIR__.'/config.inc.php';
                 document.querySelector('#input_csv').value = document.querySelector('#input_titre_1').value+";"+document.querySelector('#input_titre_2').value+";"+document.querySelector('#input_slogan').value+';'+document.querySelector('input[name=template]:checked').value+';'+document.querySelector('input[name=fond]:checked').value+';'+document.querySelector('input[name=tenue]:checked').value+';'+document.querySelector('input[name=footer]:checked').value
             }
             function updateAffiche() {
-                document.querySelector('#image_affiche').src = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
+                document.querySelector('#image_affiche').src = "affiche.php?<?php if (@$_GET['public']) { echo "public=1&"; } ?>csv="+encodeURI(document.querySelector('#input_csv').value);
                 document.querySelector('#btn-lien').href = "?csv="+encodeURI(document.querySelector('#input_csv').value);
                 document.querySelector('#btn-image').href = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value);
                 document.querySelector('#btn-pdf').href = "affiche.php?csv="+encodeURI(document.querySelector('#input_csv').value)+'&format=pdf';
