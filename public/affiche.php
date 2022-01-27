@@ -50,7 +50,7 @@ if(!file_exists($fileImage)) {
         'fond/'.$fond.' '.
         'footer/'.$footer.' '.
         'tenue/'.$tenue.' '.
-        $tete
+        '"'.$tete.'"'
   );
 }
 
