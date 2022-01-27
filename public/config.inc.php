@@ -20,7 +20,7 @@ function filter_image($v) {
 }
 
 function getLastPhotoFile($csvId) {
-    foreach(scandir(UPLOAD_DIR, SCANDIR_SORT_DESCENDING) as $photoFile) {
+    foreach(array_filter(scandir(UPLOAD_DIR, SCANDIR_SORT_DESCENDING), function($v) { return filter_image($v); }) as $photoFile) {
         if(strpos($photoFile, $csvId) !== false) {
 
             return $photoFile;
