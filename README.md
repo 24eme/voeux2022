@@ -1,4 +1,26 @@
-# Generation affiche
+# Carte de voeux 2022
+
+Ce projet a permis de fabriquer les affiches que nous avons envoyé comme carte de voeux. Il permet aussi pour ceux qui ont reçu une affiche de se prendre en photo pour la terminer.
+
+<img src="https://www.24eme.fr/img/2022_affiche_brigitte.png" height="300"> <img src="https://www.24eme.fr/img/2022_affiche_patrick.png" height="300">
+
+## Deployer le projet
+
+Dépendances :
+
+```
+aptitude install php inkscape qrencode convert imagemagick
+```
+
+Il faut aussi installer [l'outil de détourage de photo](#détourage-de-la-photo)
+
+Lancer en local :
+
+```
+php -S localhost:8000 -t public
+```
+
+## Generation affiche
     cd affiche
     bash bin/generate.sh output/output.pdf template/dessin_droite.svg "2022 avec" "Foo Bar" "Parce que je le mérite vraiment" fond/template_fond.png footer/oblique_24eme.png tenue/template_tenue.png qrcode/template_qrcode.png
 
@@ -25,3 +47,7 @@ Détourage de l'image :
 ```
 backgroundremover -a -ae 5 -i image.png -o image_decoupe.png
 ```
+
+## License libre
+
+Le code source est sous licence libre AGPL, toutes les images et photos utilisés sont compatible avec la licence libre.
