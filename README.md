@@ -2,15 +2,13 @@
 
 Ce projet a permis de fabriquer les affiches que nous avons envoyé comme carte de voeux. Il permet aussi pour ceux qui ont reçu une affiche de se prendre en photo pour la terminer.
 
-<center>
-<img src="https://www.24eme.fr/img/2022_affiche_brigitte.png" height="300"> <img src="https://www.24eme.fr/img/2022_affiche_patrick.png" height="300">
-<small>Exemples d'affiches générées</small>
-</center>
+Exemples d'affiches générées : 
 
-<center>
+<img src="https://www.24eme.fr/img/2022_affiche_brigitte.png" height="300"> <img src="https://www.24eme.fr/img/2022_affiche_patrick.png" height="300">
+
+Exemple d'une affiche avec incrustation de photo :
+
 <img src="https://www.24eme.fr/img/2022_affiche_patrick_resultat.png" height="300"/>
-<small>Exemple d'une affiche avec incrustation de photo</small>
-</center>
 
 ## Deployer le projet
 
